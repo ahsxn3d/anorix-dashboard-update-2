@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import { headers } from 'next/headers';
+import { devLoginEnabled, isLoopbackHost } from '@/lib/devLogin';
+import { DevLoginForm } from '@/components/DevLoginForm';
 import { getSession } from '@/lib/session';
 import { Wordmark } from '@/components/Logo';
 import { BlurTitle } from '@/components/BlurTitle';
@@ -11,6 +14,7 @@ export const metadata: Metadata = { title: 'Sign in' };
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
   if (await getSession()) redirect('/projects');
   const { error } = await searchParams;
+  const showDev = devLoginEnabled() && isLoopbackHost((await headers()).get('host'));
   return (
     <main className="login">
       <header><Wordmark /></header>
@@ -28,6 +32,12 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           Continue with Google
           <span className="ic"><IArrow size={14} /></span>
         </a>
+        {process.env.NODE_ENV === 'development' ? (
+          <p className="mono" style={{ maxWidth: 560, lineHeight: 1.6, textTransform: 'none', letterSpacing: 0 }}>
+            Google showing &quot;redirect_uri_mismatch&quot;? Add http://localhost:3001/api/auth/callback/google to the OAuth client&apos;s Authorized redirect URIs in Google Cloud.
+          </p>
+        ) : null}
+        {showDev ? <DevLoginForm /> : null}
       </section>
       <footer className="login-foot mono">
         <span>Owner access only</span>

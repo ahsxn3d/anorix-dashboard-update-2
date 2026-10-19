@@ -1,6 +1,6 @@
 'use server';
 
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { Prisma } from '@prisma/client';
@@ -8,6 +8,7 @@ import { prisma } from '@/lib/prisma';
 import { assertSession, createSessionToken, sessionCookieOptions } from '@/lib/session';
 import { AUTHORIZED_EMAIL, LEGACY_COOKIE, SESSION_COOKIE } from '@/lib/constants';
 import { parseProjectForm, type FieldErrors } from '@/lib/projects';
+import { devHit, devLocked, devLoginEnabled, devMiss, devPasswordMatches, isLoopbackHost } from '@/lib/devLogin';
 
 export type FormState = { ok: boolean; message: string; errors?: FieldErrors; id?: string; at?: number };
 
@@ -104,4 +105,32 @@ export async function signOut() {
   jar.delete(SESSION_COOKIE);
   jar.delete(LEGACY_COOKIE);
   redirect('/login');
+}
+
+/** Local preview login. See lib/devLogin.ts for every gate. */
+export async function devSignIn(_prev: { error: string }, fd: FormData): Promise<{ error: string }> {
+  const h = await headers();
+  if (!devLoginEnabled() || !isLoopbackHost(h.get('host'))) return { error: 'Local login is off.' };
+  if (devLocked()) return { error: 'Too many tries. Wait a minute.' };
+  const email = String(fd.get('email') || '').trim().toLowerCase();
+  const password = String(fd.get('password') || '');
+  const good = devPasswordMatches(password) && email === AUTHORIZED_EMAIL;
+  if (!good) {
+    devMiss();
+    await new Promise((r) => setTimeout(r, 700));
+    return { error: 'Wrong email or password.' };
+  }
+  devHit();
+  let name = 'Ahsan';
+  let avatar: string | null = null;
+  try {
+    const u = await prisma.user.findUnique({ where: { email: AUTHORIZED_EMAIL }, select: { name: true, image: true } });
+    name = u?.name || name;
+    avatar = u?.image || null;
+  } catch {
+    /* DB optional for the preview session */
+  }
+  const jar = await cookies();
+  jar.set(SESSION_COOKIE, createSessionToken({ email: AUTHORIZED_EMAIL, name, avatar }), sessionCookieOptions);
+  redirect('/projects');
 }

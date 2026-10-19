@@ -5,6 +5,13 @@ import { getBaseUrl } from '@/lib/baseUrl';
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
+  // Google only accepts the exact registered redirect URI (http://localhost:3001/...),
+  // so 127.0.0.1 / [::1] visits hop to localhost first (the state cookie must live on that host).
+  const host = (request.headers.get('host') || '').toLowerCase();
+  if (host.startsWith('127.0.0.1') || host.startsWith('[::1]')) {
+    const u = new URL(request.url);
+    return NextResponse.redirect(`http://localhost${host.replace(/^(127\.0\.0\.1|\[::1\])/, '')}${u.pathname}`);
+  }
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const base = getBaseUrl(request);
   if (!clientId) return NextResponse.redirect(`${base}/login?error=${encodeURIComponent('Google sign-in is not configured (GOOGLE_CLIENT_ID).')}`);

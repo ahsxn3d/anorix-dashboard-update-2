@@ -365,3 +365,9 @@ dialog.confirm .row { display: flex; justify-content: flex-end; gap: 10px; flex-
   .bt-w, .rise { opacity: 1; filter: none; transform: none; }
   .wm path { stroke-dashoffset: 0; }
 }
+
+/* local preview login (dev only) */
+.devlogin { display: grid; gap: 10px; width: min(640px, 100%); margin-top: 18px; padding: 16px; border: 1px dashed var(--line-2); border-radius: 18px; }
+.devlogin-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; }
+.devlogin .msg { font-size: 12px; color: var(--signal); }
+@media (max-width: 640px) { .devlogin-row { grid-template-columns: 1fr; } }
