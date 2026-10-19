@@ -1,36 +1,27 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
+const display = Inter_Tight({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--f-display', display: 'swap' });
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['italic'], variable: '--f-serif', display: 'swap' });
+const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--f-mono', display: 'swap', preload: false });
+
 export const metadata: Metadata = {
-  title: 'Ahsan | Frontend Developer & 3D Artist',
-  description: 'Bespoke cybernetic digital experiences, WebGL shaders, real-time escrow pipelines, and high-performance Next.js interfaces engineered for visionary founders.',
-  keywords: ['Ahsan Javed', 'ANORIX', 'Frontend Developer', '3D Artist', 'WebGL', 'Next.js', 'Creative Developer', 'Dashboard'],
-  authors: [{ name: 'Ahsan Javed' }],
-  robots: 'noindex, nofollow', // Admin panel — don't index
-  icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/icon.png', type: 'image/png' },
-      { url: '/favicon.ico' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png' },
-      { url: '/apple-icon.png' },
-    ],
-    shortcut: ['/favicon.ico'],
-  },
+  title: { default: 'Anorix Studio', template: '%s · Anorix Studio' },
+  description: 'Anorix studio dashboard',
+  robots: { index: false, follow: false },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: '#051236',
+  width: 'device-width',
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        {children}
-      </body>
+    <html lang="en" className={`${display.variable} ${serif.variable} ${mono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

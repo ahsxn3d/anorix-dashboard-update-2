@@ -101,3 +101,7 @@ next-env.d.ts
 dev*.log
 /three-qa/
 .vercel
+
+# offline QA uploads (UPLOAD_DRIVER=local)
+.local-uploads/
+public/uploads/

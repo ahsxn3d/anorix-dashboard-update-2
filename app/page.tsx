@@ -1,16 +1,8 @@
-import { Metadata } from 'next';
-import { auth } from '@/auth';
-import AdminDashboard from './admin/AdminDashboard';
+import { redirect } from 'next/navigation';
+import { getSession } from '@/lib/session';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
 
-export const metadata: Metadata = {
-  title: 'ANORENT — Studio Cockpit & Admin Dashboard',
-  description: 'ANORENT Studio Admin Dashboard — CMS, Deployments, Inquiries & Settings',
-};
-
-export default async function HomePage() {
-  const session = await auth();
-  return <AdminDashboard sessionUser={session?.user} />;
+export default async function Home() {
+  redirect((await getSession()) ? '/projects' : '/login');
 }

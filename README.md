@@ -1,20 +1,12 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Anorix Studio dashboard
 
-# Run and deploy your AI Studio app
+Owner-only dashboard for the anorent / Anorix main site. Two sections:
 
-This contains everything you need to run your app locally.
+- **Projects**: list, create, edit, delete `DeploymentProduct` rows (the catalog the main site reads), with image upload.
+- **Profile**: your account (name, avatar), catalog stats, sign out.
 
-View your app in AI Studio: https://ai.studio/apps/030149d1-ba9e-4f09-9eeb-6d7028ee60e7
+Runs on http://localhost:3001 (`npm run dev`). Sign in with the Google account in `ADMIN_EMAIL`.
 
-## Run Locally
+Env (`.env`, never committed): `DATABASE_URL`, `DIRECT_URL`, `AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ADMIN_EMAIL`, `UPLOADTHING_TOKEN`.
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+`prisma/schema.prisma` mirrors the live database. Do not run `prisma db push` or `migrate` from here.

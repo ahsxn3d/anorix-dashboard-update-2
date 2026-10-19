@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 4 136 38" fill="none" role="img" aria-label="Anorix">
+<defs><clipPath id="wa"><rect x="-4" y="6" width="34" height="34"/></clipPath><clipPath id="wx"><rect x="108" y="16" width="28" height="24"/></clipPath></defs>
+<g stroke="#181818" stroke-width="4.4" stroke-miterlimit="10">
+<path clip-path="url(#wa)" d="M-0.8,44 L13,4.2 L26.8,44"/>
+<path d="M33,16 V40 M33,25 A8,8 0 0 1 49,25 V40"/>
+<circle cx="68.4" cy="28" r="11.8"/>
+<path d="M88,16 V40 M88,27 A11,11 0 0 1 99,16 H101"/>
+<path d="M107,16 V40"/>
+<path clip-path="url(#wx)" d="M111.5,13 L132.5,43 M132.5,13 L111.5,43"/>
+</g>
+<rect x="10.8" y="28" width="4.4" height="4.4" fill="#FF4949"/>
+<rect x="104.8" y="6" width="4.4" height="4.4" fill="#FF4949"/>
+</svg>

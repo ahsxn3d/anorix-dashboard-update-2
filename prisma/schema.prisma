@@ -1,5 +1,6 @@
-// Prisma schema for ANORENT Studio
-// Optimized for Neon Serverless PostgreSQL & Next.js App Router
+// Anorix dashboard: mirror of the LIVE database (introspected with `prisma db pull`, Oct 2026).
+// Shared with the anorent main site. Do NOT run `prisma db push` / `migrate` from this repo:
+// the dashboard only reads/writes DeploymentProduct and User. Change the database deliberately, never by schema sync.
 
 generator client {
   provider = "prisma-client-js"
@@ -11,92 +12,81 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-// --------------------------------------------------------
-// 1. SITE CONFIG & GLOBAL BRAND TELEMETRY
-// --------------------------------------------------------
 model SiteConfig {
-  id              String   @id @default(cuid())
-  brandName       String   @default("ANORENT")
-  brandLogoText   String   @default("ANORENT")
-  brandTagline    String   @default("Digital Artist & Creative Technologist Studio")
-  liveBadgeStatus String   @default("99.98% LIVE")
-  pingLatency     String   @default("24ms")
-  escrowCoverage  String   @default("100% ESCROW-PROTECTED")
-  contactEmail    String   @default("hello@anorent.com")
-  telegramHandle  String?  @default("@anorent")
-  discordHandle   String?  @default("anorent#0001")
-  githubUrl       String?  @default("https://github.com/anorent")
-  twitterUrl      String?  @default("https://twitter.com/anorent")
-  socialChannels  Json?
-  metaTitle       String?  @default("ANORENT — Cybernetic Web Experiences & 3D Architect")
-  metaDescription String?  @db.Text
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id              String    @id @default("singleton")
+  brandName       String    @default("Anorix Studio")
+  brandLogoText   String?   @default("ANORIX")
+  brandTagline    String?   @default("Digital Artist & Creative Technologist Studio")
+  liveBadgeStatus String    @default("99.98% LIVE")
+  pingLatency     String?   @default("4ms")
+  escrowCoverage  String?   @default("100% ESCROW-PROTECTED")
+  contactEmail    String    @default("ahsxn3d@gmail.com")
+  telegramHandle  String?   @default("@anorix")
+  discordHandle   String?   @default("anorix#0001")
+  githubUrl       String?   @default("https://github.com/anorix")
+  twitterUrl      String?   @default("https://twitter.com/anorix")
+  metaTitle       String    @default("Anorix | Digital Craft Studio & SaaS Hub")
+  metaDescription String?   @default("Bespoke web applications, 3D WebGL experiences, and proprietary SaaS platforms.")
+  createdAt       DateTime? @default(now())
+  updatedAt       DateTime  @updatedAt
+  whatsappNumber  String    @default("+923284992759")
 }
 
-// --------------------------------------------------------
-// 2. USER & ADMIN AUTHENTICATION
-// --------------------------------------------------------
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  name         String?
-  passwordHash String?
-  role         String   @default("ADMIN") // ADMIN, EDITOR, VIEWER
-  avatarUrl    String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  companyName   String?
+  emailVerified DateTime?
+  image         String?
+  status        UserStatus     @default(NEW_SIGNUP)
+  totalSpendUsd Int            @default(0)
+  role          UserRole       @default(CLIENT)
+  ClientOrder   ClientOrder[]
+  Subscription  Subscription[]
 }
 
-// --------------------------------------------------------
-// 3. DEPLOYMENT PRODUCTS / PORTFOLIO PROJECTS
-// --------------------------------------------------------
 model DeploymentProduct {
-  id               String   @id @default(cuid())
-  slug             String   @unique
+  id               String        @id @default(cuid())
+  slug             String        @unique
   title            String
   client           String?
-  year             String?
-  category         String
+  year             String?       @default("2026")
+  category         String        @default("Web Applications")
   badge            String?
   shortDescription String
-  fullDescription  String?  @db.Text
+  fullDescription  String?
   thumbnailUrl     String
   coverImageUrl    String?
   previewVideoUrl  String?
-  demoUrl          String
+  demoUrl          String        @default("#")
   githubUrl        String?
-  liveUrl          String?
-  rating           Float?   @default(5.0)
-  usersCount       String?
-  viewsCount       String?
-  tags             String[] @default([])
-  techStack        String[] @default([])
-  features         String[] @default([])
-  fpsBenchmark     Int?     @default(60)
-  auditScore       Int?     @default(100)
-  status           String   @default("Production")
-  isFeatured       Boolean  @default(false)
-  isPublished      Boolean  @default(true)
-  displayOrder     Int      @default(0)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  @@index([category])
-  @@index([isFeatured])
-  @@index([isPublished])
+  liveUrl          String        @default("#")
+  rating           Float         @default(5.0)
+  tags             String[]
+  techStack        String[]
+  features         String[]
+  fpsBenchmark     Int           @default(60)
+  auditScore       Int           @default(100)
+  isFeatured       Boolean       @default(false)
+  isPublished      Boolean       @default(true)
+  displayOrder     Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  appLaunchUrl     String?
+  type             ProductType   @default(STUDIO_SERVICE)
+  status           ProductStatus @default(PRODUCTION)
 }
 
-// --------------------------------------------------------
-// 4. CLIENT REVIEWS & TESTIMONIALS
-// --------------------------------------------------------
 model ReviewItem {
   id         String   @id @default(cuid())
   name       String
   role       String?
   company    String?
   avatarUrl  String?
-  comment    String   @db.Text
+  comment    String
   rating     Int      @default(5)
   dateString String?
   tags       String[] @default([])
@@ -105,14 +95,8 @@ model ReviewItem {
   isFeatured Boolean  @default(false)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-
-  @@index([isApproved])
-  @@index([isFeatured])
 }
 
-// --------------------------------------------------------
-// 5. CONTACT SUBMISSIONS & KANBAN INQUIRIES
-// --------------------------------------------------------
 model ContactSubmission {
   id            String   @id @default(cuid())
   name          String
@@ -121,28 +105,22 @@ model ContactSubmission {
   projectType   String?
   budget        String?
   timeline      String?
-  message       String   @db.Text
-  status        String   @default("NEW") // NEW, QUALIFYING, PROPOSAL_SENT, IN_NEGOTIATION, WON, LOST, UNREAD, IN_REVIEW, CONTACTED, CLOSED
-  priority      String   @default("NORMAL") // LOW, NORMAL, HIGH, URGENT
-  notes         String?  @db.Text
+  message       String
+  status        String   @default("NEW")
+  priority      String   @default("NORMAL")
+  notes         String?
   internalNotes String[] @default([])
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
-
-  @@index([status])
-  @@index([priority])
 }
 
-// --------------------------------------------------------
-// 6. FREQUENTLY ASKED QUESTIONS (FAQ) & FAQ CONFIG
-// --------------------------------------------------------
 model FaqHeaderConfig {
-  id                String   @id @default(cuid())
+  id                String   @id @default("singleton")
   badgeText         String   @default("[ CLEAR ANSWERS // ZERO AMBIGUITY ]")
   pageTitle         String   @default("FREQUENTLY ASKED QUESTIONS")
   pageSubtitle      String   @default("Straight talk on pricing, escrow milestones, WebGL performance, and production handoff.")
   searchPlaceholder String   @default("Search escrow, stack, timelines, pricing...")
-  supportEmail      String   @default("hello@anorent.com")
+  supportEmail      String   @default("hello@anorix.com")
   telemetry1Title   String   @default("ESCROW PROTECTED")
   telemetry1Sub     String   @default("100% Milestone-gated")
   telemetry2Title   String   @default("PERFORMANCE SLA")
@@ -160,20 +138,14 @@ model FAQItem {
   id           String   @id @default(cuid())
   category     String
   question     String
-  answer       String   @db.Text
+  answer       String
   helpfulCount Int      @default(0)
   displayOrder Int      @default(0)
   isPublished  Boolean  @default(true)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-
-  @@index([category])
-  @@index([isPublished])
 }
 
-// --------------------------------------------------------
-// 7. PROOF METRIC CARDS & TELEMETRY
-// --------------------------------------------------------
 model ProofMetricCard {
   id           String   @id @default(cuid())
   cardKey      String   @unique
@@ -188,11 +160,8 @@ model ProofMetricCard {
   updatedAt    DateTime @updatedAt
 }
 
-// --------------------------------------------------------
-// 8. HERO SECTION CONTENT & TELEMETRY
-// --------------------------------------------------------
 model HeroContent {
-  id                  String   @id @default(cuid())
+  id                  String   @id @default("singleton")
   badgeText           String   @default("[ SOLO CREATIVE DEVELOPER & 3D ARTIST ]")
   superTitle          String?
   headlineLine1       String   @default("CYBERNETiC CRAFT")
@@ -201,11 +170,11 @@ model HeroContent {
   mainHeading         String?
   mainTitle           String?
   highlightedWord     String?  @default("CRAFT")
-  bioSubtext          String   @db.Text
+  bioSubtext          String
   subheading          String?
   subtitle            String?
   highlightWords      String[] @default([])
-  primaryCtaLabel     String   @default("START A PROJECT ↗")
+  primaryCtaLabel     String   @default("START A PROJECT Γåù")
   primaryCtaText      String?
   primaryCtaRoute     String   @default("contact")
   primaryCtaUrl       String?
@@ -225,9 +194,6 @@ model HeroContent {
   updatedAt           DateTime @updatedAt
 }
 
-// --------------------------------------------------------
-// 9. HORIZONTAL STORY STAGES & ARCHITECTURE NODES
-// --------------------------------------------------------
 model StoryStage {
   id            String             @id @default(cuid())
   stageIndex    Int                @unique
@@ -235,7 +201,7 @@ model StoryStage {
   year          String?
   title         String?
   subtitle      String?
-  description   String             @db.Text
+  description   String
   highlightTag  String?
   stageBadge    String?
   headlineLine1 String?
@@ -248,60 +214,213 @@ model StoryStage {
   specTag3Sub   String?
   bulletPoint1  String?
   bulletPoint2  String?
-  nodes         ArchitectureNode[]
-  phases        EscrowPhase[]
   createdAt     DateTime           @default(now())
   updatedAt     DateTime           @updatedAt
+  nodes         ArchitectureNode[]
+  phases        EscrowPhase[]
 }
 
 model ArchitectureNode {
   id        String      @id @default(cuid())
   stageId   String?
-  stage     StoryStage? @relation(fields: [stageId], references: [id], onDelete: Cascade)
   key       String
   name      String
   latency   String
-  summary   String      @db.Text
+  summary   String
   order     Int         @default(0)
   createdAt DateTime    @default(now())
+  stage     StoryStage? @relation(fields: [stageId], references: [id], onDelete: Cascade)
 }
 
 model EscrowPhase {
   id                   String      @id @default(cuid())
   stageId              String?
-  stage                StoryStage? @relation(fields: [stageId], references: [id], onDelete: Cascade)
   phaseNumber          Int
   title                String
-  description          String      @db.Text
+  description          String
   verificationCriteria String?
   status               String      @default("PENDING")
   allocationPercentage Int         @default(25)
   badgeText            String?
   createdAt            DateTime    @default(now())
+  stage                StoryStage? @relation(fields: [stageId], references: [id], onDelete: Cascade)
 }
 
-// --------------------------------------------------------
-// 10. ABOUT PAGE CONTENT & CREATIVE BIO
-// --------------------------------------------------------
 model AboutContent {
-  id                   String   @id @default(cuid())
-  name                 String   @default("ANORENT")
+  id                   String   @id @default("singleton")
+  name                 String   @default("Anorix")
   artistName           String?  @default("Ahsan")
   role                 String   @default("Lead Creative Technologist & Full-Stack Architect")
   tagline              String?  @default("Solo Creative Developer & 3D Artist")
   handle               String?  @default("ahsxn.3d")
   avatarUrl            String?  @default("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80")
-  executiveBio         String   @db.Text
-  bio                  String?  @db.Text
-  location             String   @default("Global Remote // Earth Grid")
-  locationTimezone     String   @default("UTC / EST Active")
-  availabilityStatus   String   @default("LIMITED SLOTS AVAILABLE")
-  yearsActive          String   @default("7+ Years")
-  deploymentsDelivered String   @default("48+")
-  clientSatisfaction   String   @default("99.8%")
+  executiveBio         String
+  bio                  String?
+  location             String   @default("Lahore, PK (UTC+5)")
+  locationTimezone     String   @default("UTC+5 Active")
+  availabilityStatus   String   @default("AVAILABLE FOR Q3/Q4 COMMISSIONS")
+  yearsActive          String   @default("3+ Years")
+  deploymentsDelivered String   @default("12+")
+  clientSatisfaction   String   @default("100%")
   techSkills           String[] @default([])
-  contactEmail         String   @default("hello@anorent.com")
+  contactEmail         String   @default("ahsxn3d@gmail.com")
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }
+
+model ClientOrder {
+  id                 String               @id
+  orderNumber        String               @unique
+  userId             String?
+  clientName         String
+  clientEmail        String
+  companyName        String?
+  packageId          String?
+  couponId           String?
+  totalAmountUsd     Int
+  depositAmountUsd   Int
+  status             OrderStatus          @default(NEW_INQUIRY)
+  stagingUrl         String?
+  productionUrl      String?
+  githubRepoUrl      String?
+  adminNotes         String?
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime
+  DiscountCoupon     DiscountCoupon?      @relation(fields: [couponId], references: [id])
+  PricingPackage     PricingPackage?      @relation(fields: [packageId], references: [id])
+  User               User?                @relation(fields: [userId], references: [id])
+  PaymentTransaction PaymentTransaction[]
+  ProjectMilestone   ProjectMilestone[]
+}
+
+model DiscountCoupon {
+  id             String        @id
+  code           String        @unique
+  description    String?
+  discountType   DiscountType  @default(PERCENTAGE)
+  discountValue  Int
+  minOrderUsd    Int           @default(0)
+  maxRedemptions Int?
+  timesRedeemed  Int           @default(0)
+  expiresAt      DateTime?
+  isActive       Boolean       @default(true)
+  showInPopUp    Boolean       @default(false)
+  popUpMessage   String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime
+  ClientOrder    ClientOrder[]
+}
+
+model PaymentTransaction {
+  id             String          @id
+  orderId        String
+  provider       PaymentProvider @default(STRIPE)
+  transactionRef String?
+  amountUsd      Int
+  isDeposit      Boolean         @default(true)
+  status         String          @default("COMPLETED")
+  paidAt         DateTime        @default(now())
+  ClientOrder    ClientOrder     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model PricingPackage {
+  id              String         @id
+  slug            String         @unique
+  tierName        String
+  tagline         String
+  basePriceUsd    Int
+  isRecurring     Boolean        @default(false)
+  billingInterval String?
+  turnaroundDays  Int            @default(7)
+  revisionsCount  Int            @default(3)
+  isPopular       Boolean        @default(false)
+  features        String[]
+  deliverables    String[]
+  techStack       String[]
+  displayOrder    Int            @default(0)
+  isActive        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime
+  ClientOrder     ClientOrder[]
+  Subscription    Subscription[]
+}
+
+model ProjectMilestone {
+  id          String      @id
+  orderId     String
+  title       String
+  description String?
+  isCompleted Boolean     @default(false)
+  completedAt DateTime?
+  orderIndex  Int         @default(0)
+  ClientOrder ClientOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Subscription {
+  id                   String         @id
+  userId               String
+  packageId            String
+  stripeSubscriptionId String?        @unique
+  status               String         @default("ACTIVE")
+  currentPeriodStart   DateTime       @default(now())
+  currentPeriodEnd     DateTime
+  cancelAtPeriodEnd    Boolean        @default(false)
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime
+  PricingPackage       PricingPackage @relation(fields: [packageId], references: [id])
+  User                 User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED_AMOUNT
+}
+
+enum OrderStatus {
+  NEW_INQUIRY
+  DEPOSIT_PENDING
+  IN_DEVELOPMENT
+  REVIEW_STAGING
+  UNDER_CONSTRUCTION
+  FINAL_PAYMENT_PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentProvider {
+  STRIPE
+  PAYPAL
+  SOLANA_USDC
+  ESCROW_FIVERR
+  BANK_WIRE
+}
+
+enum ProductStatus {
+  PRODUCTION
+  BETA
+  STAGING
+  UNDER_CONSTRUCTION
+  ARCHIVED
+}
+
+enum ProductType {
+  STUDIO_SERVICE
+  SAAS_PLATFORM
+  AI_AGENT_TOOL
+  DEVELOPER_UTILITY
+}
+
+enum UserRole {
+  CLIENT
+  SUBSCRIBER
+  ADMIN
+}
+
+enum UserStatus {
+  NEW_SIGNUP
+  ACTIVE_CLIENT
+  RECURRING_SUBSCRIBER
+  INACTIVE
+}
+
 

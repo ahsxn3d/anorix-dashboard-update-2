@@ -1,6 +1,0 @@
-{
-  "name": "ANORENT - Cybernetic Studio Admin Cockpit",
-  "description": "Architectural high-performance Admin Cockpit for ANORENT Studio // Digital Artist & Web Engineering, with Prisma-backed Headless CMS, 3D HoloCards, and AI Studio Copilot.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
