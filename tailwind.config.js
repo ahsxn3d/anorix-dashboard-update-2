@@ -8,13 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'deep-void': '#06010F',
-        'card-dark': '#0D041A',
-        'card-hover': '#130722',
-        'neon-purple': '#8B00EE',
-        'neon-cyan': '#38BDF8',
-        'neon-emerald': '#10B981',
-        'neon-pink': '#EC4899',
+        'deep-void': '#0A0A0A',
+        'card-dark': '#111111',
+        'card-hover': '#171717',
+        'neon-purple': '#3B82F6',
+        'neon-cyan': '#A1A1A1',
+        'neon-emerald': '#22C55E',
+        'neon-pink': '#A1A1A1',
       },
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -45,8 +45,8 @@ module.exports = {
           to: { transform: 'rotate(0deg)' },
         },
         pulseGlow: {
-          '0%, 100%': { filter: 'drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)) drop-shadow(0 0 30px rgba(6, 182, 212, 0.4))' },
-          '50%': { filter: 'drop-shadow(0 0 25px rgba(168, 85, 247, 0.9)) drop-shadow(0 0 45px rgba(236, 72, 153, 0.7))' },
+          '0%, 100%': { filter: 'drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(161, 161, 161, 0.4))' },
+          '50%': { filter: 'drop-shadow(0 0 25px rgba(59, 130, 246, 0.9)) drop-shadow(0 0 45px rgba(161, 161, 161, 0.7))' },
         },
         radarWave: {
           '0%': { transform: 'scale(0.8)', opacity: '0.9' },
@@ -66,7 +66,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'grid-pattern': "linear-gradient(to right, rgba(168, 85, 247, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px)",
+        'grid-pattern': "linear-gradient(to right, rgba(59, 130, 246, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px)",
       },
       backgroundSize: {
         'grid': '32px 32px',

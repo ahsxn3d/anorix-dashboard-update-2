@@ -74,12 +74,12 @@ export const ButterButton: React.FC<ButterButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-[#8B00EE] hover:bg-[#9d1af7] text-white shadow-[0_0_20px_rgba(139,0,238,0.4)] border border-purple-400/40',
-    purple: 'bg-[#8B00EE]/80 hover:bg-[#8B00EE] text-white shadow-[0_0_15px_rgba(139,0,238,0.35)] border border-purple-400/30',
-    secondary: 'bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 hover:border-purple-500/40',
-    emerald: 'bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.25)]',
-    cyan: 'bg-cyan-600/30 hover:bg-cyan-600/50 text-cyan-300 border border-cyan-500/40 shadow-[0_0_15px_rgba(56,189,248,0.25)]',
-    ghost: 'bg-transparent hover:bg-white/5 text-slate-300 hover:text-white border border-transparent'
+    primary: 'bg-white hover:bg-[#e8e8e8] text-black border border-white',
+    purple: 'bg-white hover:bg-[#e8e8e8] text-black border border-white',
+    secondary: 'bg-transparent hover:bg-white hover:text-black text-white border border-white/20',
+    emerald: 'bg-white hover:bg-[#e8e8e8] text-black border border-white',
+    cyan: 'bg-transparent hover:bg-white hover:text-black text-white border border-white/20',
+    ghost: 'bg-transparent hover:bg-white/10 text-white/70 hover:text-white border border-transparent'
   };
 
   const sizeStyles = {
@@ -91,16 +91,13 @@ export const ButterButton: React.FC<ButterButtonProps> = ({
   return (
     <motion.button
       ref={btnRef}
-      animate={{ x: isHovered ? offset.x : 0, y: isHovered ? offset.y : 0 }}
+      animate={{ x: 0, y: 0 }}
       transition={{ type: 'spring', stiffness: 350, damping: 20 }}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ 
-        scale: 0.94, 
-        transition: { type: 'spring', stiffness: 500, damping: 15 } 
-      }}
+      whileHover={{ y: -1 }}
+      whileTap={{ y: 0 }}
       onClick={handleClick}
       disabled={disabled}
       type={type}
@@ -109,10 +106,6 @@ export const ButterButton: React.FC<ButterButtonProps> = ({
       aria-label={ariaLabel}
       className={`relative inline-flex items-center justify-center font-mono select-none cursor-pointer transition-all duration-200 ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
     >
-      {/* Dynamic Glow Aura */}
-      {isHovered && (
-        <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-sm pointer-events-none transition-opacity duration-200" />
-      )}
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </motion.button>
   );

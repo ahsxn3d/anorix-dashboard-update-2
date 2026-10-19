@@ -101,12 +101,12 @@ export const HoloCard: React.FC<HoloCardProps> = ({
           mass: 0.5,
         }}
         whileTap={{ scale: 0.97, transition: { type: 'spring', stiffness: 500, damping: 15 } }}
-        className={`relative w-full h-full rounded-2xl border bg-[#0D041A] transition-colors duration-300 select-none overflow-hidden ${
+        className={`relative w-full h-full rounded-2xl border bg-[#111111] transition-colors duration-300 select-none overflow-hidden ${
           supportsFinePointer ? '[transform-style:preserve-3d]' : ''
         } ${
           isHovered
-            ? 'border-purple-500/60 shadow-[0_12px_36px_rgba(0,0,0,0.85),0_0_24px_rgba(139,0,238,0.35)]'
-            : 'border-purple-500/20 shadow-[0_8px_24px_rgba(0,0,0,0.6)]'
+            ? 'border-neutral-700/60 shadow-[0_12px_36px_rgba(0,0,0,0.85),0_0_24px_rgba(59, 130, 246,0.35)]'
+            : 'border-neutral-700/20 shadow-[0_8px_24px_rgba(0,0,0,0.6)]'
         } ${className}`}
       >
         {/* Specular Dynamic Light Glare */}
@@ -115,7 +115,7 @@ export const HoloCard: React.FC<HoloCardProps> = ({
             className="pointer-events-none absolute inset-0 z-30 transition-opacity duration-200"
             style={{
               opacity: glareOpacity,
-              background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(255,255,255,0.4) 0%, rgba(139,0,238,0.2) 25%, transparent 60%)`,
+              background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(255,255,255,0.4) 0%, rgba(59, 130, 246,0.2) 25%, transparent 60%)`,
             }}
           />
         )}

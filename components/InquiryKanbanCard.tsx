@@ -51,13 +51,13 @@ export const InquiryKanbanCard: React.FC<InquiryKanbanCardProps> = ({
         whileHover={{ y: -3, scale: 1.01 }}
         whileTap={{ scale: 0.98 }}
         onClick={onClick}
-        className={`p-3.5 rounded-xl bg-[#0D041A] border border-purple-500/20 hover:border-purple-400/60 shadow-lg cursor-pointer transition-colors space-y-2 select-none ${className}`}
+        className={`p-3.5 rounded-xl bg-[#111111] border border-neutral-700/20 hover:border-neutral-700/60 shadow-lg cursor-pointer transition-colors space-y-2 select-none ${className}`}
       >
         <div className="flex items-center justify-between gap-2">
           <span className="font-display font-bold text-sm text-white truncate">
             {clientName}
           </span>
-          <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30 shrink-0">
+          <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-neutral-800/20 text-neutral-300 border border-neutral-700/30 shrink-0">
             {budgetTier}
           </span>
         </div>
@@ -73,13 +73,13 @@ export const InquiryKanbanCard: React.FC<InquiryKanbanCardProps> = ({
 
         {priority && (
           <div className="pt-1 flex items-center justify-between text-[10px] font-mono">
-            <span className="text-purple-400/80 font-semibold">{status}</span>
+            <span className="text-neutral-300/80 font-semibold">{status}</span>
             <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold ${
               priority === 'URGENT'
-                ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                ? 'bg-red-500/20 text-red-300 border border-red-500/30'
                 : priority === 'HIGH'
-                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                ? 'bg-amber-500/20 text-amber-200 border border-amber-500/30'
+                : 'bg-green-500/20 text-green-300 border border-green-500/30'
             }`}>
               {priority}
             </span>

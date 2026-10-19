@@ -54,11 +54,11 @@ export const CyberButton: React.FC<CyberButtonProps> = ({
   }, [disabled, supportsFinePointer]);
 
   const variants = {
-    primary: 'bg-[#8B00EE] hover:bg-[#9d1af7] text-white border-purple-400/50 shadow-[0_0_20px_rgba(139,0,238,0.4)]',
-    secondary: 'bg-white/5 hover:bg-white/10 text-slate-200 border-white/15 hover:border-purple-500/40',
-    emerald: 'bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.25)]',
-    danger: 'bg-rose-600/30 hover:bg-rose-600/50 text-rose-300 border-rose-500/40 shadow-[0_0_15px_rgba(244,63,94,0.25)]',
-    ghost: 'bg-transparent hover:bg-white/5 text-slate-300 hover:text-white border-transparent'
+    primary: 'bg-white hover:bg-[#e8e8e8] text-black border-white',
+    secondary: 'bg-transparent hover:bg-white hover:text-black text-white border-white/20',
+    emerald: 'bg-white hover:bg-[#e8e8e8] text-black border-white',
+    danger: 'bg-transparent hover:bg-white hover:text-black text-white border-white/30',
+    ghost: 'bg-transparent hover:bg-white/10 text-white/70 hover:text-white border-transparent'
   };
 
   const sizes = {
@@ -70,7 +70,7 @@ export const CyberButton: React.FC<CyberButtonProps> = ({
   return (
     <motion.button
       ref={btnRef}
-      animate={{ x: supportsFinePointer && isHovered ? offset.x : 0, y: supportsFinePointer && isHovered ? offset.y : 0 }}
+      animate={{ x: 0, y: 0 }}
       transition={{ type: 'spring', stiffness: 350, damping: 20 }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => {
@@ -91,7 +91,7 @@ export const CyberButton: React.FC<CyberButtonProps> = ({
       className={`relative inline-flex items-center justify-center font-mono border select-none cursor-pointer transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {supportsFinePointer && isHovered && !disabled && (
-        <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 blur-sm pointer-events-none" />
+        <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-neutral-800 to-neutral-800 opacity-30 blur-sm pointer-events-none" />
       )}
       <span className="relative z-10 flex items-center gap-1.5">
         {icon}

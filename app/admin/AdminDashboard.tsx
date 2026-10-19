@@ -161,7 +161,7 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#06010F] text-slate-100 flex overflow-hidden font-sans selection:bg-[#8B00EE] selection:text-white relative">
+    <div className="min-h-screen bg-black text-[#f4f4f4] flex overflow-hidden font-sans selection:bg-white selection:text-black relative">
       {/* 0. TECHNICAL FULL-SCREEN CMS DASHBOARD LOADING OVERLAY */}
       <DashboardLoadingScreen
         isLoading={isCmsLoading}
@@ -207,7 +207,7 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
 
       {/* 2. CENTER WORKSPACE CANVAS */}
       <main
-        className="flex-1 h-screen overflow-y-auto flex flex-col min-w-0 bg-[#06010F] relative bg-grid-pattern bg-grid-glow transition-all"
+        className="flex-1 h-screen overflow-y-auto flex flex-col min-w-0 bg-black relative"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           const x = e.clientX - rect.left;
@@ -216,10 +216,6 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
           e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
         }}
       >
-        {/* Floating background ambient lights */}
-        <div className="fixed top-1/4 left-1/3 w-96 h-96 bg-[#8B00EE]/10 rounded-full blur-3xl pointer-events-none animate-float-slow" />
-        <div className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-[#38BDF8]/10 rounded-full blur-3xl pointer-events-none animate-float-reverse" />
-
         {/* Top Sticky Compact Header */}
         <Header
           activeTab={activeTab}
@@ -236,13 +232,13 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
         <div className="p-4 md:p-6 lg:p-8 space-y-6 max-w-[1600px] w-full mx-auto relative z-10">
           {/* Dashboard Welcome Banner */}
           <DashboardHoloCard
-            className="p-0 rounded-2xl bg-gradient-to-r from-[#130722]/95 via-[#0D041A]/95 to-[#06010F]/95 border border-purple-500/30 shadow-2xl relative overflow-hidden"
-            glowColor="rgba(139, 0, 238, 0.45)"
+            className="p-0 rounded-2xl bg-black border border-white/10 relative overflow-hidden"
+            glowColor="rgba(59, 130, 246, 0.45)"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-widest text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/30">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] tracking-[0.16em] text-white/40 border border-white/15">
                     STUDiO COCKPiT v3.0
                   </span>
                   <StatusRadarPulse
@@ -260,7 +256,7 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
                     restartKey={reloadCounter}
                   />
                 </div>
-                <p className="text-xs text-[#a393eb]/80 max-w-xl font-mono">
+                <p className="text-sm text-white/55 max-w-xl">
                   <TextHackerScramble
                     text={
                       isLoggedIn
@@ -276,8 +272,8 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
 
               {/* Quick Telemetry Status Badges */}
               <div className="flex items-center gap-3 shrink-0">
-                <div className="px-3.5 py-2 rounded-xl bg-[#130722] border border-white/5 flex items-center gap-2.5 shadow-md">
-                  <Cpu className="w-4 h-4 text-[#8B00EE]" />
+                <div className="px-3.5 py-2 rounded-2xl bg-black border border-white/10 flex items-center gap-2.5">
+                  <Cpu className="w-4 h-4 text-white/50" />
                   <div>
                     <div className="text-[10px] font-mono text-slate-400 uppercase">Engine Status</div>
                     <div className="text-xs font-bold text-slate-100">
@@ -285,7 +281,7 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
                     </div>
                   </div>
                 </div>
-                <div className="px-3.5 py-2 rounded-xl bg-[#130722] border border-white/5 flex items-center gap-2.5 shadow-md">
+                <div className="px-3.5 py-2 rounded-2xl bg-black border border-white/10 flex items-center gap-2.5">
                   <StatusRadarPulse
                     status={isLoggedIn ? 'OPTIMAL' : 'MAINTENANCE'}
                     label={isLoggedIn ? '60 FPS Locked' : 'Auth Required'}
@@ -300,23 +296,21 @@ export default function AdminDashboard({ sessionUser }: AdminDashboardProps) {
 
           {/* Locked State Security Shield Fallback when unauthenticated */}
           {!isLoggedIn ? (
-            <div className="relative rounded-3xl bg-[#0a0316]/95 border border-purple-500/30 p-8 md:p-14 text-center shadow-[0_0_80px_rgba(139,0,238,0.2)] backdrop-blur-2xl space-y-6 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-transparent to-black/60 pointer-events-none" />
-
-              <div className="relative w-20 h-20 mx-auto flex items-center justify-center rounded-3xl bg-[#14072b] border border-purple-500/50 shadow-[0_0_40px_rgba(139,0,238,0.5)]">
-                <Lock className="w-9 h-9 text-[#8B00EE] animate-pulse" />
+            <div className="relative rounded-3xl bg-[#0a0a0a] border border-white/10 p-8 md:p-14 text-center space-y-6 overflow-hidden">
+              <div className="relative w-16 h-16 mx-auto flex items-center justify-center rounded-full border border-white/15">
+                <Lock className="w-6 h-6 text-white/70" />
               </div>
 
               <div className="space-y-2 max-w-lg mx-auto relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[#38bdf8] font-mono text-xs">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 text-white/50 text-[11px] tracking-[0.16em]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-green-300" />
                   <span>SINGLE-USER SECURITY LOCK</span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-white tracking-wide font-mono">
+                <h3 className="text-2xl md:text-3xl font-medium text-white tracking-[-0.04em]">
                   SECURITY SHiELD ACTiVE
                 </h3>
-                <p className="text-xs font-mono text-purple-200/80 leading-relaxed">
-                  Database transmissions, client inquiries, deployments, and CMS editors are locked. Sign in with the registered Google Workspace account (<span className="text-cyan-300 font-bold">{AUTHORIZED_EMAIL}</span>) to unlock the workspace.
+                <p className="text-sm text-white/50 leading-relaxed">
+                  Database transmissions, client inquiries, deployments, and CMS editors are locked. Sign in with the registered Google Workspace account (<span className="text-neutral-300 font-bold">{AUTHORIZED_EMAIL}</span>) to unlock the workspace.
                 </p>
               </div>
 

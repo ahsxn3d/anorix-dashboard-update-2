@@ -46,36 +46,33 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Inquiries Pipeline',
       icon: MessageSquare,
       badge: null,
-      accentColor: 'from-[#8B00EE] to-[#7c3aed]'
+      accentColor: 'from-[#3B82F6] to-[#3B82F6]'
     },
     {
       id: 'deployments' as NavTab,
       label: 'Deployments',
       icon: FolderKanban,
       badge: null,
-      accentColor: 'from-[#06b6d4] to-[#3b82f6]'
+      accentColor: 'from-[#A1A1A1] to-[#3b82f6]'
     },
     {
       id: 'cms' as NavTab,
       label: 'Website CMS',
       icon: Globe,
       badge: null,
-      accentColor: 'from-[#ec4899] to-[#8B00EE]'
+      accentColor: 'from-[#A1A1A1] to-[#3B82F6]'
     },
     {
       id: 'settings' as NavTab,
       label: 'Settings & Security',
       icon: Settings,
       badge: null,
-      accentColor: 'from-[#6366f1] to-[#8B00EE]'
+      accentColor: 'from-[#3B82F6] to-[#3B82F6]'
     }
   ];
 
   return (
-    <aside className="w-64 bg-[#090317]/98 backdrop-blur-3xl h-screen p-4 flex flex-col justify-between shrink-0 select-none z-30 shadow-[15px_0_50px_rgba(0,0,0,0.9)] transition-all duration-300 border-r border-white/10 relative overflow-hidden">
-      {/* Background ambient neon flare */}
-      <div className="absolute -top-20 -left-20 w-44 h-44 bg-[#8B00EE]/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
-      <div className="absolute top-1/2 -right-20 w-44 h-44 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none animate-float-slow" />
+    <aside className="w-60 bg-black h-screen px-4 py-5 flex flex-col justify-between shrink-0 select-none z-30 border-r border-white/10 relative overflow-hidden">
 
       {/* Top Section: Multi-Animated Logo & Navigation */}
       <div className="flex flex-col gap-5 relative z-10">
@@ -91,10 +88,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             className="w-full justify-center"
           />
           <div className="text-center px-1">
-            <span className="text-[9px] font-mono font-bold tracking-wider text-purple-300/90 block">
+            <span className="text-[10px] tracking-[0.18em] uppercase text-white/40 block">
               ANORIX STUDIO // DIGITAL ARTIST & DEV
             </span>
-            <span className="text-[8px] font-mono text-[#22d3ee]/80 tracking-widest block mt-0.5">
+            <span className="text-[10px] tracking-[0.16em] uppercase text-white/30 block mt-1">
               STUDIO COCKPIT v3.0 // HIGH-PERFORMANCE WEB ENGINEERING
             </span>
           </div>
@@ -102,8 +99,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Live Quantum Telemetry Banner with StatusRadarPulse & Embossed Finish */}
         <motion.div
-          className="p-3 rounded-2xl bg-gradient-to-r from-[#14072b] via-[#1a0a38] to-[#14072b] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.4)] flex items-center justify-between border border-purple-500/30 relative overflow-hidden group"
-          whileHover={{ y: -1, borderColor: 'rgba(168,85,247,0.6)' }}
+          className="p-3 rounded-2xl bg-[#0a0a0a] flex items-center justify-between border border-white/10 relative overflow-hidden group"
+          whileHover={{ y: -1, borderColor: 'rgba(59, 130, 246,0.6)' }}
         >
           {/* Animated Laser Light sweep */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -115,18 +112,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             size="sm"
             className="border-none bg-transparent p-0 shadow-none"
           />
-          <div className="p-1.5 rounded-xl bg-[#8B00EE]/25 text-[#c084fc] border border-purple-500/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
-            <Zap className="w-3.5 h-3.5 animate-bounce" />
+          <div className="p-1.5 rounded-full border border-white/15 text-white/60">
+            <Zap className="w-3.5 h-3.5" />
           </div>
         </motion.div>
 
         {/* Navigation Section with 3D Embossed Pill Buttons ("Boss Effect") */}
         <nav className="flex flex-col gap-2">
           <div className="flex items-center justify-between px-2 mb-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#a393eb]/70">
+            <span className="text-[10px] uppercase tracking-[0.18em] text-white/35">
               <CyberScrambleText text="COMMAND MODULES" scrambleSpeed={25} cycles={2} triggerKey={activeTab} />
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="w-1 h-1 rounded-full bg-white/50" />
           </div>
 
           {navItems.map((item) => {
@@ -145,19 +142,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 whileHover={{ scale: 1.02, x: 2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 450, damping: 22 }}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-full font-medium text-xs transition-all duration-200 group relative cursor-pointer select-none ${
+                className={`w-full flex items-center justify-between px-2 py-2 rounded-full text-[13px] transition-colors duration-500 group relative cursor-pointer select-none ${
                   isActive
-                    ? 'text-white font-bold bg-gradient-to-r from-[#8B00EE] via-[#7c3aed] to-[#4f46e5] border border-purple-300/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),inset_0_-2px_4px_rgba(0,0,0,0.5),0_6px_20px_rgba(139,0,238,0.5)]'
-                    : 'text-slate-200 hover:text-white bg-[#120727]/70 hover:bg-[#1b0a38] border border-white/10 hover:border-purple-500/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),inset_0_-1px_2px_rgba(0,0,0,0.4),0_2px_8px_rgba(0,0,0,0.3)]'
+                    ? 'text-black bg-white'
+                    : 'text-white/55 hover:text-white'
                 }`}
               >
                 {/* Icon & Label Left Group */}
                 <div className="flex items-center gap-3 relative z-10">
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
+                    className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-500 shrink-0 ${
                       isActive
-                        ? 'bg-white/20 text-white shadow-[0_0_12px_rgba(255,255,255,0.5)] border border-white/30'
-                        : 'bg-white/5 text-purple-300 group-hover:text-white group-hover:bg-[#8B00EE]/30 border border-white/5 group-hover:border-purple-400/40'
+                        ? 'text-black'
+                        : 'text-white/45 group-hover:text-white'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -172,7 +169,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <span
                     className={`relative z-10 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full shadow-sm transition-transform shrink-0 ${
                       item.id === 'inquiries'
-                        ? 'bg-[#06b6d4]/20 text-[#22d3ee] border border-[#06b6d4]/50 shadow-[0_0_8px_rgba(6,182,212,0.4)] animate-pulse'
+                        ? 'bg-[#A1A1A1]/20 text-[#A1A1A1] border border-[#A1A1A1]/50 shadow-[0_0_8px_rgba(161, 161, 161,0.4)] animate-pulse'
                         : isActive
                         ? 'bg-white/20 text-white border border-white/40'
                         : 'bg-white/5 text-slate-400 border border-white/10'
@@ -197,7 +194,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             }}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.97 }}
-            className="p-2.5 rounded-2xl bg-gradient-to-r from-[#14072b] to-[#1c0c3b] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),inset_0_-2px_4px_rgba(0,0,0,0.5),0_4px_16px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(139,0,238,0.5)] transition-all flex items-center justify-between group cursor-pointer border border-purple-500/30 hover:border-purple-400"
+            className="p-2.5 rounded-2xl bg-transparent hover:bg-white/5 transition-colors duration-500 flex items-center justify-between group cursor-pointer border border-white/10"
             title="Open Settings & Security"
           >
             <div className="flex items-center gap-2.5 min-w-0">
@@ -205,14 +202,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <img
                   src={user.avatar}
                   alt={user.name}
-                  className="w-9 h-9 rounded-full object-cover shadow-md border-2 border-purple-500 group-hover:border-[#38bdf8] transition-colors"
+                  className="w-9 h-9 rounded-full object-cover border border-white/20"
                 />
-                <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#090317] shadow-[0_0_8px_#34d399]" />
+                <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-[#090317] shadow-[0_0_8px_#22C55E]" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <span className="text-xs font-bold text-white group-hover:text-[#c084fc] transition-colors flex items-center gap-1 truncate">
+                <span className="text-xs font-bold text-white group-hover:text-[#A1A1A1] transition-colors flex items-center gap-1 truncate">
                   <span className="truncate">{user.name}</span>
-                  <ShieldCheck className="w-3 h-3 text-[#22d3ee] shrink-0" />
+                  <ShieldCheck className="w-3 h-3 text-[#A1A1A1] shrink-0" />
                 </span>
                 <span className="text-[10px] font-mono text-slate-400 truncate">
                   {user.email}
@@ -229,7 +226,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="w-full p-2.5 rounded-full bg-gradient-to-r from-[#1e1035] via-[#2a134a] to-[#1e1035] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_16px_rgba(66,133,244,0.35)] hover:shadow-[0_0_25px_rgba(66,133,244,0.5)] transition-all flex items-center justify-between group cursor-pointer border border-[#4285F4]/50 hover:border-[#4285F4]"
+            className="w-full p-2.5 rounded-full bg-gradient-to-r from-[#171717] via-[#2a134a] to-[#171717] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_16px_rgba(66,133,244,0.35)] hover:shadow-[0_0_25px_rgba(66,133,244,0.5)] transition-all flex items-center justify-between group cursor-pointer border border-[#4285F4]/50 hover:border-[#4285F4]"
             title="Sign in with Google Account"
           >
             <div className="flex items-center gap-2.5 min-w-0">
@@ -256,9 +253,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="flex flex-col text-left truncate">
                 <span className="text-xs font-bold text-white flex items-center gap-1">
                   <span>Sign In</span>
-                  <span className="text-[10px] font-normal text-[#22d3ee]">• Google</span>
+                  <span className="text-[10px] font-normal text-[#A1A1A1]">• Google</span>
                 </span>
-                <span className="text-[9px] text-[#a393eb] font-mono">
+                <span className="text-[9px] text-[#A1A1A1] font-mono">
                   Workspace OAuth
                 </span>
               </div>

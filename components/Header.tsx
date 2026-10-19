@@ -99,10 +99,10 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Dynamic Animated Outline with Boss Bounce on Page Shift */}
       <motion.div
         key={`header-outline-${bounceKey}`}
-        initial={{ opacity: 0.8, scaleY: 0.95, borderColor: 'rgba(139, 0, 238, 0.9)' }}
-        animate={{ opacity: 1, scaleY: 1, borderColor: 'rgba(255, 255, 255, 0.1)' }}
-        transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-        className="w-full py-2.5 px-4 md:px-6 bg-[#070312]/95 backdrop-blur-2xl flex items-center justify-between gap-3 sticky top-0 shadow-[0_10px_35px_rgba(0,0,0,0.75)] border-b"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="w-full h-14 px-4 md:px-6 bg-black/80 backdrop-blur-md flex items-center justify-between gap-3 sticky top-0 border-b border-white/10"
       >
         {/* Left Section: Active Page Embossed Pill Badge with Ripple & Search */}
         <div className="flex items-center gap-3 flex-1 min-w-0 max-w-2xl">
@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleMobileSidebar}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.92 }}
-            className="md:hidden p-2 rounded-full bg-[#130728] text-[#a393eb] hover:text-white shrink-0 cursor-pointer border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+            className="md:hidden p-2 rounded-full text-white/70 hover:text-white shrink-0 cursor-pointer border border-white/15"
             aria-label="Toggle Navigation"
           >
             <Menu className="w-4 h-4" />
@@ -120,20 +120,20 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Active Page Embossed Pill ("Boss Effect") with Spring Ripple Bounce on Page Shift */}
           <motion.div
             key={`page-pill-${activeTab}`}
-            initial={{ scale: 0.88, y: -6, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 420, damping: 18 }}
-            className="hidden sm:flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#1a0a38] via-[#240c4e] to-[#1a0a38] border border-purple-400/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.6),0_4px_16px_rgba(139,0,238,0.35)] shrink-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className="hidden sm:flex items-center gap-2.5 px-1 py-1 shrink-0"
           >
             <motion.div
               animate={{ rotate: [0, -10, 10, 0] }}
               transition={{ duration: 0.5 }}
-              className="w-7 h-7 rounded-full bg-[#8B00EE] text-white shadow-[0_0_10px_rgba(139,0,238,0.8)] flex items-center justify-center shrink-0 border border-purple-300/40"
+              className="w-7 h-7 rounded-full text-white/70 flex items-center justify-center shrink-0"
             >
               <ActiveIcon className="w-3.5 h-3.5" />
             </motion.div>
             <div className="flex flex-col text-left">
-              <span className="text-[11px] font-black font-mono tracking-wider text-white">
+              <span className="text-[12px] tracking-[-0.02em] text-white">
                 <CyberScrambleText
                   text={currentTabInfo.label}
                   scrambleSpeed={25}
@@ -142,14 +142,14 @@ export const Header: React.FC<HeaderProps> = ({
                 />
               </span>
             </div>
-            <span className="text-[9px] font-mono text-[#38bdf8] bg-[#38bdf8]/15 border border-[#38bdf8]/30 px-1.5 py-0.2 rounded-full font-bold">
+            <span className="text-[10px] tracking-[0.14em] text-white/35 px-1.5">
               {currentTabInfo.code}
             </span>
           </motion.div>
 
           {/* Compact Search Bar with 3D Embossed Pill Depth */}
           <div className="relative w-full max-w-sm group">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#8B00EE] group-focus-within:text-[#38bdf8] transition-colors">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/35 group-focus-within:text-white transition-colors">
               <Search className="w-3.5 h-3.5" />
             </div>
             <input
@@ -157,10 +157,10 @@ export const Header: React.FC<HeaderProps> = ({
               value={searchValue}
               onChange={handleSearch}
               placeholder="Search leads, CMS, nodes..."
-              className="w-full pl-8 pr-9 py-1.5 text-xs rounded-full bg-[#120727]/90 text-slate-100 placeholder-[#a393eb]/50 focus:outline-none border border-white/10 focus:border-[#8B00EE] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),inset_0_-1px_2px_rgba(0,0,0,0.5)] focus:shadow-[0_0_20px_rgba(139,0,238,0.4)] transition-all font-medium"
+              className="w-full pl-8 pr-9 py-1.5 text-xs rounded-full bg-transparent text-white placeholder-white/30 focus:outline-none border border-white/15 focus:border-white/60 transition-colors duration-500"
             />
             <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
-              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[8px] font-mono font-bold text-[#c084fc] bg-[#28154e]/80 border border-purple-500/30 rounded-full">
+              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] text-white/40 border border-white/15 rounded-full">
                 <Command className="w-2 h-2" /> K
               </kbd>
             </div>
@@ -171,21 +171,21 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2 shrink-0">
           {/* Timeframe Selector Pill Capsule with 3D Embossed Sliders */}
           <div className="relative hidden md:flex items-center">
-            <div className="flex items-center p-1 rounded-full bg-[#120727] border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.6)]">
+            <div className="flex items-center gap-1">
               {timeframes.map((tf) => {
                 const isSelected = selectedTimeframe === tf;
                 return (
                   <button
                     key={tf}
                     onClick={() => handleTimeframeClick(tf)}
-                    className={`relative px-3 py-1 text-[11px] font-bold rounded-full transition-colors cursor-pointer z-10 select-none ${
-                      isSelected ? 'text-white' : 'text-[#a393eb] hover:text-white'
+                    className={`relative px-3 py-1 text-[12px] rounded-full transition-colors duration-500 cursor-pointer z-10 select-none ${
+                      isSelected ? 'text-black' : 'text-white/45 hover:text-white'
                     }`}
                   >
                     {isSelected && (
                       <motion.div
                         layoutId="header-timeframe-pill"
-                        className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8B00EE] to-[#6366f1] border border-purple-300/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_4px_14px_rgba(139,0,238,0.5)] -z-10"
+                        className="absolute inset-0 rounded-full bg-white -z-10"
                         transition={{ type: 'spring', stiffness: 450, damping: 25 }}
                       />
                     )}
@@ -202,36 +202,36 @@ export const Header: React.FC<HeaderProps> = ({
                   initial={{ opacity: 0, scale: 0.95, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                  className="absolute top-12 right-0 w-64 p-3.5 bg-[#120727]/98 backdrop-blur-2xl rounded-2xl shadow-2xl z-50 border border-purple-500/40"
+                  className="absolute top-12 right-0 w-64 p-3.5 bg-[#0a0a0a] rounded-2xl z-50 border border-white/10"
                 >
                   <div className="flex items-center justify-between pb-2 border-b border-white/10 mb-2">
                     <span className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-[#8B00EE]" /> Date Range
+                      <Calendar className="w-3.5 h-3.5 text-[#3B82F6]" /> Date Range
                     </span>
                     <button
                       onClick={() => setShowCustomDatePicker(false)}
-                      className="text-[10px] text-[#a393eb] hover:text-white cursor-pointer"
+                      className="text-[10px] text-[#A1A1A1] hover:text-white cursor-pointer"
                     >
                       Close
                     </button>
                   </div>
                   <div className="space-y-2">
                     <div>
-                      <label className="text-[10px] font-mono text-[#a393eb] block mb-0.5">Start Date</label>
+                      <label className="text-[10px] font-mono text-[#A1A1A1] block mb-0.5">Start Date</label>
                       <input
                         type="date"
                         value={customStartDate}
                         onChange={(e) => setCustomStartDate(e.target.value)}
-                        className="w-full px-2 py-1 text-xs font-mono rounded-lg bg-[#0a0514] text-slate-100 border border-white/10 focus:border-[#8B00EE]"
+                        className="w-full px-2 py-1 text-xs font-mono rounded-lg bg-[#0A0A0A] text-slate-100 border border-white/10 focus:border-[#3B82F6]"
                       />
                     </div>
                     <div>
-                      <label className="text-[10px] font-mono text-[#a393eb] block mb-0.5">End Date</label>
+                      <label className="text-[10px] font-mono text-[#A1A1A1] block mb-0.5">End Date</label>
                       <input
                         type="date"
                         value={customEndDate}
                         onChange={(e) => setCustomEndDate(e.target.value)}
-                        className="w-full px-2 py-1 text-xs font-mono rounded-lg bg-[#0a0514] text-slate-100 border border-white/10 focus:border-[#8B00EE]"
+                        className="w-full px-2 py-1 text-xs font-mono rounded-lg bg-[#0A0A0A] text-slate-100 border border-white/10 focus:border-[#3B82F6]"
                       />
                     </div>
                     <motion.button
@@ -241,7 +241,7 @@ export const Header: React.FC<HeaderProps> = ({
                         setShowCustomDatePicker(false);
                         setSelectedTimeframe(`Custom (${customStartDate} to ${customEndDate})`);
                       }}
-                      className="w-full py-1.5 text-xs font-bold rounded-full bg-gradient-to-r from-[#8B00EE] to-[#7c3aed] text-white shadow-lg shadow-purple-500/30 cursor-pointer"
+                      className="w-full py-1.5 text-xs rounded-full bg-white text-black cursor-pointer"
                     >
                       Apply Range
                     </motion.button>
@@ -257,7 +257,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={handleSyncClick}
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.96 }}
-              className="p-1.5 md:px-3 py-1.5 rounded-full bg-gradient-to-r from-[#14072b] to-[#1e0d3b] text-[#22d3ee] hover:text-white border border-[#06b6d4]/40 hover:border-[#06b6d4] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),inset_0_-1px_2px_rgba(0,0,0,0.5),0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all cursor-pointer flex items-center gap-1.5 text-xs font-mono font-bold"
+              className="p-1.5 md:px-3 py-1.5 rounded-full bg-transparent hover:bg-white hover:text-black text-white border border-white/20 transition-colors duration-500 cursor-pointer flex items-center gap-1.5 text-xs"
               title="Authenticate & Re-sync Headless CMS"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
@@ -271,11 +271,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setNotificationsOpen(!notificationsOpen)}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.92 }}
-              className="p-2 rounded-full bg-[#130728] text-slate-300 hover:text-white border border-white/10 hover:border-purple-500/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] relative cursor-pointer"
+              className="p-2 rounded-full text-white/60 hover:text-white border border-white/15 relative cursor-pointer"
               title="Notifications"
             >
               <Bell className="w-3.5 h-3.5" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-[#ec4899] rounded-full shadow-[0_0_8px_#ec4899] animate-pulse" />
+              <span className="absolute top-1.5 right-1.5 w-1 h-1 bg-white rounded-full" />
             </motion.button>
 
             <AnimatePresence>
@@ -284,7 +284,7 @@ export const Header: React.FC<HeaderProps> = ({
                   initial={{ opacity: 0, scale: 0.92, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                  className="absolute right-0 mt-3 w-80 p-4 bg-[#120727]/98 backdrop-blur-2xl rounded-2xl shadow-2xl z-50 border border-purple-500/40"
+                  className="absolute right-0 mt-3 w-80 p-4 bg-[#0a0a0a] rounded-2xl z-50 border border-white/10"
                 >
                   <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
                     <StatusRadarPulse
@@ -294,13 +294,13 @@ export const Header: React.FC<HeaderProps> = ({
                       size="sm"
                       className="bg-transparent border-none p-0 shadow-none"
                     />
-                    <span className="text-[10px] font-mono text-[#c084fc] cursor-pointer hover:underline">Mark all read</span>
+                    <span className="text-[10px] font-mono text-[#A1A1A1] cursor-pointer hover:underline">Mark all read</span>
                   </div>
                   <div className="flex flex-col gap-2.5 mt-3 max-h-64 overflow-y-auto">
-                    <div className="p-3 rounded-xl bg-[#1b0a38] border border-white/5 text-xs hover:border-purple-500/30 transition-colors">
+                    <div className="p-3 rounded-xl bg-black border border-white/10 text-xs">
                       <div className="flex items-center justify-between">
                         <p className="font-bold text-white text-xs">High-Priority Brief Received</p>
-                        <span className="text-[9px] font-mono text-emerald-400">Just now</span>
+                        <span className="text-[9px] font-mono text-green-300">Just now</span>
                       </div>
                       <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
                         Elena Rostova requested WebGL architectural proposal ($7k - $15k).
@@ -317,14 +317,14 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleAiSidebar}
             whileHover={{ scale: 1.04, y: -1 }}
             whileTap={{ scale: 0.96 }}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 transition-all cursor-pointer border ${
+            className={`px-3.5 py-1.5 rounded-full text-xs flex items-center gap-2 transition-colors duration-500 cursor-pointer border ${
               isAiSidebarOpen
-                ? 'bg-gradient-to-r from-[#8B00EE] via-[#7c3aed] to-[#ec4899] text-white border-purple-300/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_0_25px_rgba(139,0,238,0.7)]'
-                : 'bg-gradient-to-r from-[#14072b] to-[#1f0d3d] text-[#c084fc] hover:text-white border-purple-500/40 hover:border-purple-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_0_15px_rgba(139,0,238,0.3)]'
+                ? 'bg-white text-black border-white'
+                : 'bg-transparent text-white border-white/20 hover:bg-white hover:text-black'
             }`}
             title={isAiSidebarOpen ? 'Close AI Studio Assistant' : 'Open AI Studio Assistant'}
           >
-            <Bot className="w-3.5 h-3.5 text-[#38bdf8]" />
+            <Bot className="w-3.5 h-3.5" />
             <span className="font-bold tracking-wide hidden sm:inline">AI Copilot</span>
             {isAiSidebarOpen ? (
               <PanelRightClose className="w-3 h-3" />

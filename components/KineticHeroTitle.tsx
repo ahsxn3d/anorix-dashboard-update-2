@@ -143,13 +143,13 @@ export const KineticHeroTitle: React.FC<KineticHeroTitleProps> = ({
           key={`${lineIndex}-${i}`}
           className={`inline-block font-black select-none tracking-tighter origin-center font-mono transition-colors duration-75 ${
             !isSolved
-              ? 'text-[#c084fc] drop-shadow-[0_0_12px_rgba(139,0,238,0.9)] animate-pulse'
+              ? 'text-[#A1A1A1] drop-shadow-[0_0_12px_rgba(59, 130, 246,0.9)] animate-pulse'
               : isSpecial
-              ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400'
+              ? 'text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-800 to-neutral-800'
               : 'text-white'
           }`}
           style={{
-            textShadow: '0 4px 20px rgba(139, 0, 238, 0.4)',
+            textShadow: '0 4px 20px rgba(59, 130, 246, 0.4)',
           }}
         >
           {char}

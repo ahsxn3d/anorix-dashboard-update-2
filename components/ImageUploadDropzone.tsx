@@ -114,7 +114,7 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
         <div className="flex items-center justify-between">
           {label && (
             <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5 uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-[#38BDF8]" />
+              <Sparkles className="w-3 h-3 text-[#A1A1A1]" />
               {label}
             </label>
           )}
@@ -136,8 +136,8 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
 
       {/* Error Banner */}
       {errorMessage && (
-        <div className="p-2.5 rounded-xl bg-rose-500/15 border border-rose-500/40 text-rose-300 text-xs font-mono flex items-center gap-2 animate-in fade-in">
-          <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
+        <div className="p-2.5 rounded-xl bg-red-500/15 border border-red-500/40 text-red-300 text-xs font-mono flex items-center gap-2 animate-in fade-in">
+          <AlertCircle className="w-4 h-4 shrink-0 text-red-300" />
           <span className="flex-1 truncate">{errorMessage}</span>
           <button
             type="button"
@@ -153,7 +153,7 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
       {value ? (
         /* Image Preview Box */
         <div
-          className={`relative group overflow-hidden border border-purple-500/30 hover:border-[#8B00EE] bg-[#0A0318] transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] ${
+          className={`relative group overflow-hidden border border-neutral-700/30 hover:border-[#3B82F6] bg-[#0A0318] transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] ${
             isAvatar ? 'rounded-full aspect-square max-w-[160px] mx-auto' : 'rounded-2xl ' + aspectClasses[aspectRatio]
           }`}
         >
@@ -167,10 +167,10 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
           />
 
           {/* Dark Glass Overlay on Hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06010F]/90 via-[#06010F]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-3">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-3">
             {/* Top Badges */}
             <div className="flex items-center justify-between">
-              <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1 backdrop-blur-md">
+              <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-green-500/20 text-green-300 border border-green-500/40 flex items-center gap-1 backdrop-blur-md">
                 <ShieldCheck className="w-3 h-3" />
                 CDN STORED
               </span>
@@ -191,7 +191,7 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isUploading}
-                className="px-3 py-1.5 rounded-xl bg-purple-600/80 hover:bg-purple-600 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md transition-all hover:scale-105 cursor-pointer disabled:opacity-50"
+                className="px-3 py-1.5 rounded-xl bg-neutral-800/80 hover:bg-neutral-800 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md transition-all hover:scale-105 cursor-pointer disabled:opacity-50"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${isUploading ? 'animate-spin' : ''}`} />
                 {isUploading ? 'Uploading...' : 'Replace'}
@@ -201,7 +201,7 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
                 type="button"
                 onClick={handleRemove}
                 disabled={isUploading}
-                className="px-3 py-1.5 rounded-xl bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md transition-all hover:scale-105 cursor-pointer disabled:opacity-50"
+                className="px-3 py-1.5 rounded-xl bg-red-600/80 hover:bg-red-600 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md transition-all hover:scale-105 cursor-pointer disabled:opacity-50"
               >
                 <X className="w-3.5 h-3.5" />
                 Remove
@@ -211,16 +211,16 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
 
           {/* Progress Bar inside preview if replacing */}
           {isUploading && (
-            <div className="absolute inset-0 bg-[#06010F]/80 backdrop-blur-md flex flex-col items-center justify-center p-4 gap-3">
-              <div className="w-10 h-10 rounded-full border-2 border-[#8B00EE] border-t-transparent animate-spin" />
+            <div className="absolute inset-0 bg-[#0A0A0A]/80 backdrop-blur-md flex flex-col items-center justify-center p-4 gap-3">
+              <div className="w-10 h-10 rounded-full border-2 border-[#3B82F6] border-t-transparent animate-spin" />
               <div className="w-full max-w-xs space-y-1">
                 <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-[#8B00EE] to-[#38BDF8] transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-[#3B82F6] to-[#A1A1A1] transition-all duration-300"
                     style={{ width: `${uploadProgress}%` }}
                   />
                 </div>
-                <div className="flex items-center justify-between text-[10px] font-mono text-cyan-300">
+                <div className="flex items-center justify-between text-[10px] font-mono text-neutral-300">
                   <span>Uploading to CDN...</span>
                   <span>{uploadProgress}%</span>
                 </div>
@@ -238,39 +238,39 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
           }}
           onDragLeave={() => setIsDragging(false)}
           onDrop={handleDrop}
-          className={`relative group cursor-pointer transition-all duration-300 flex flex-col items-center justify-center p-6 border-2 border-dashed bg-[#0B0418]/80 hover:bg-[#120626] backdrop-blur-xl ${
+          className={`relative group cursor-pointer transition-all duration-300 flex flex-col items-center justify-center p-6 border-2 border-dashed bg-[#0B0418]/80 hover:bg-[#171717] backdrop-blur-xl ${
             isDragging
-              ? 'border-cyan-400 bg-[#15082e] shadow-[0_0_30px_rgba(56,189,248,0.3)] scale-[0.99]'
-              : 'border-purple-500/30 hover:border-purple-500/80 shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
+              ? 'border-neutral-700 bg-[#15082e] shadow-[0_0_30px_rgba(161, 161, 161,0.3)] scale-[0.99]'
+              : 'border-neutral-700/30 hover:border-neutral-700/80 shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
           } ${isAvatar ? 'rounded-full aspect-square max-w-[160px] mx-auto' : 'rounded-2xl ' + aspectClasses[aspectRatio]}`}
         >
           {/* Ambient Glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#8B00EE]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#3B82F6]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl" />
 
           {isUploading ? (
             /* Uploading State */
             <div className="w-full max-w-xs space-y-3 text-center">
-              <div className="w-12 h-12 rounded-2xl bg-[#170833] border border-purple-500/40 flex items-center justify-center mx-auto text-[#38BDF8] shadow-[0_0_20px_rgba(139,0,238,0.5)]">
-                <UploadCloud className="w-6 h-6 animate-bounce text-[#38BDF8]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#170833] border border-neutral-700/40 flex items-center justify-center mx-auto text-[#A1A1A1] shadow-[0_0_20px_rgba(59, 130, 246,0.5)]">
+                <UploadCloud className="w-6 h-6 animate-bounce text-[#A1A1A1]" />
               </div>
               <div className="space-y-1">
                 <p className="text-xs font-mono font-bold text-white">Transmitting to CDN...</p>
                 <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-[#8B00EE] via-[#7c3aed] to-[#38BDF8] transition-all duration-300 shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+                    className="h-full bg-gradient-to-r from-[#3B82F6] via-[#3B82F6] to-[#A1A1A1] transition-all duration-300 shadow-[0_0_10px_rgba(161, 161, 161,0.5)]"
                     style={{ width: `${uploadProgress}%` }}
                   />
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-slate-400">
-                  <span className="text-purple-300">UploadThing Node</span>
-                  <span className="text-cyan-300 font-bold">{uploadProgress}%</span>
+                  <span className="text-neutral-300">UploadThing Node</span>
+                  <span className="text-neutral-300 font-bold">{uploadProgress}%</span>
                 </div>
               </div>
             </div>
           ) : (
             /* Idle Drag State */
             <div className="space-y-2.5 text-center pointer-events-none">
-              <div className="w-12 h-12 rounded-2xl bg-[#14072b] border border-purple-500/30 flex items-center justify-center mx-auto text-purple-400 group-hover:text-[#38BDF8] group-hover:border-[#38BDF8]/60 group-hover:scale-110 transition-all shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-[#171717] border border-neutral-700/30 flex items-center justify-center mx-auto text-neutral-300 group-hover:text-[#A1A1A1] group-hover:border-[#A1A1A1]/60 group-hover:scale-110 transition-all shadow-md">
                 <UploadCloud className="w-6 h-6" />
               </div>
 
@@ -278,15 +278,15 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
                 <>
                   <div className="space-y-1">
                     <p className="text-xs font-mono font-bold text-slate-200 group-hover:text-white transition-colors">
-                      Drag & drop image or <span className="text-[#38BDF8] underline">browse</span>
+                      Drag & drop image or <span className="text-[#A1A1A1] underline">browse</span>
                     </p>
                     <p className="text-[10px] font-mono text-slate-400">
                       {sizeHints[endpoint]}
                     </p>
                   </div>
 
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[9px] font-mono text-purple-300">
-                    <ShieldCheck className="w-3 h-3 text-cyan-400" />
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neutral-800/10 border border-neutral-700/20 text-[9px] font-mono text-neutral-300">
+                    <ShieldCheck className="w-3 h-3 text-neutral-300" />
                     Permanent CDN Hosting
                   </div>
                 </>

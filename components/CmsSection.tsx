@@ -248,15 +248,15 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
           <div
             className={`px-4 py-3 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center gap-3 font-mono text-xs ${
               toast.type === 'success'
-                ? 'bg-emerald-950/90 border-emerald-500/50 text-emerald-200'
+                ? 'bg-green-950/90 border-green-500/50 text-green-300'
                 : toast.type === 'error'
-                ? 'bg-rose-950/90 border-rose-500/50 text-rose-200'
-                : 'bg-purple-950/90 border-purple-500/50 text-purple-200'
+                ? 'bg-red-950/90 border-red-500/50 text-red-300'
+                : 'bg-neutral-800/90 border-neutral-700/50 text-neutral-300'
             }`}
           >
-            {toast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />}
-            {toast.type === 'error' && <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />}
-            {toast.type === 'info' && <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />}
+            {toast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-green-300 shrink-0" />}
+            {toast.type === 'error' && <AlertCircle className="w-4 h-4 text-red-300 shrink-0" />}
+            {toast.type === 'info' && <Sparkles className="w-4 h-4 text-neutral-300 shrink-0" />}
             <span>{toast.msg}</span>
           </div>
         </div>
@@ -264,21 +264,21 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
 
       {/* TOP CMS HEADER BANNER & GLOBAL CONTROLS */}
       <DashboardHoloCard
-        className="p-6 md:p-8 rounded-3xl bg-gradient-to-r from-[#130722]/95 via-[#0D041A]/95 to-[#06010F]/95 border border-purple-500/30 relative overflow-hidden"
-        glowColor="rgba(139, 0, 238, 0.4)"
+        className="p-6 md:p-8 rounded-3xl bg-gradient-to-r from-[#171717]/95 via-[#111111]/95 to-[#0A0A0A]/95 border border-neutral-700/30 relative overflow-hidden"
+        glowColor="rgba(59, 130, 246, 0.4)"
       >
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/30 flex items-center gap-1.5">
-                <Globe className="w-3 h-3 text-cyan-400" />
+              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-[#A1A1A1] bg-[#A1A1A1]/10 border border-[#A1A1A1]/30 flex items-center gap-1.5">
+                <Globe className="w-3 h-3 text-neutral-300" />
                 WEBSITE CONTENT & DEPLOYMENTS MANAGER
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#8B00EE]/20 text-purple-300 border border-purple-500/30">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#3B82F6]/20 text-neutral-300 border border-neutral-700/30">
                 FOCUSED CMS
               </span>
               {lastSavedTime && (
-                <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
+                <span className="text-[11px] font-mono text-green-300 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   Saved at {lastSavedTime}
                 </span>
@@ -300,10 +300,10 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
                 sound.playClick();
                 setIsImportModalOpen(true);
               }}
-              className="px-3.5 py-2.5 rounded-xl bg-[#090214] hover:bg-cyan-950/40 text-cyan-300 hover:text-white border border-cyan-500/30 text-xs font-mono font-bold flex items-center gap-2 transition-all"
+              className="px-3.5 py-2.5 rounded-xl bg-[#0A0A0A] hover:bg-neutral-800/40 text-neutral-300 hover:text-white border border-neutral-700/30 text-xs font-mono font-bold flex items-center gap-2 transition-all"
               title="Import JSON configuration file"
             >
-              <Upload className="w-4 h-4 text-cyan-400" />
+              <Upload className="w-4 h-4 text-neutral-300" />
               <span>Import JSON</span>
             </button>
 
@@ -312,10 +312,10 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
                 sound.playClick();
                 setIsExportModalOpen(true);
               }}
-              className="px-3.5 py-2.5 rounded-xl bg-[#090214] hover:bg-purple-950/40 text-purple-300 hover:text-white border border-purple-500/30 text-xs font-mono font-bold flex items-center gap-2 transition-all"
+              className="px-3.5 py-2.5 rounded-xl bg-[#0A0A0A] hover:bg-neutral-800/40 text-neutral-300 hover:text-white border border-neutral-700/30 text-xs font-mono font-bold flex items-center gap-2 transition-all"
               title="Sync / Export JSON to transfer data to live website"
             >
-              <Download className="w-4 h-4 text-purple-400" />
+              <Download className="w-4 h-4 text-neutral-300" />
               <span>Sync / Export JSON</span>
             </button>
 
@@ -324,7 +324,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
                 sound.playClick();
                 setIsResetModalOpen(true);
               }}
-              className="px-3 py-2.5 rounded-xl bg-[#090214] hover:bg-amber-950/40 text-amber-400 hover:text-white border border-amber-500/30 text-xs font-mono font-bold flex items-center gap-1.5 transition-all"
+              className="px-3 py-2.5 rounded-xl bg-[#0A0A0A] hover:bg-amber-950/40 text-amber-200 hover:text-white border border-amber-500/30 text-xs font-mono font-bold flex items-center gap-1.5 transition-all"
               title="Reset all tabs to defaults"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -336,7 +336,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
               disabled={isSaving}
               variant="purple"
               size="md"
-              className="flex items-center gap-2 shadow-lg shadow-purple-600/30"
+              className="flex items-center gap-2 shadow-lg shadow-neutral-800/30"
             >
               {isSaving ? (
                 <>
@@ -355,7 +355,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
       </DashboardHoloCard>
 
       {/* 2 FOCUSED MANAGEMENT TABS NAVIGATION BAR */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-2 rounded-2xl bg-[#130722]/90 border border-purple-500/20 backdrop-blur-md shadow-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-2 rounded-2xl bg-[#171717]/90 border border-neutral-700/20 backdrop-blur-md shadow-xl">
         {/* Tab 1 */}
         <button
           onClick={() => {
@@ -364,7 +364,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
           }}
           className={`py-3 px-4 rounded-xl text-xs font-mono font-bold transition-all flex items-center justify-center gap-3 text-center cursor-pointer ${
             activeTab === 'about'
-              ? 'bg-[#8B00EE] text-white shadow-lg shadow-purple-600/30 scale-[1.01]'
+              ? 'bg-[#3B82F6] text-white shadow-lg shadow-neutral-800/30 scale-[1.01]'
               : 'text-slate-400 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -372,7 +372,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
             className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all ${
               activeTab === 'about'
                 ? 'bg-white/20 text-white border border-white/30 shadow-[0_0_8px_rgba(255,255,255,0.4)]'
-                : 'bg-white/5 text-purple-300 border border-white/10'
+                : 'bg-white/5 text-neutral-300 border border-white/10'
             }`}
           >
             <Activity className="w-3.5 h-3.5 shrink-0" />
@@ -388,7 +388,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
           }}
           className={`py-3 px-4 rounded-xl text-xs font-mono font-bold transition-all flex items-center justify-center gap-3 text-center cursor-pointer ${
             activeTab === 'contact'
-              ? 'bg-[#8B00EE] text-white shadow-lg shadow-purple-600/30 scale-[1.01]'
+              ? 'bg-[#3B82F6] text-white shadow-lg shadow-neutral-800/30 scale-[1.01]'
               : 'text-slate-400 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -396,7 +396,7 @@ export const CmsSection: React.FC<CmsSectionProps> = ({ onTriggerReload }) => {
             className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all ${
               activeTab === 'contact'
                 ? 'bg-white/20 text-white border border-white/30 shadow-[0_0_8px_rgba(255,255,255,0.4)]'
-                : 'bg-white/5 text-purple-300 border border-white/10'
+                : 'bg-white/5 text-neutral-300 border border-white/10'
             }`}
           >
             <Mail className="w-3.5 h-3.5 shrink-0" />

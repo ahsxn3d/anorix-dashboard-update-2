@@ -60,17 +60,17 @@ export const ExportJsonModal: React.FC<ExportModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="w-full max-w-3xl rounded-3xl bg-[#0e041c] border border-purple-500/30 p-6 md:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+      <div className="w-full max-w-3xl rounded-3xl bg-[#111111] border border-neutral-700/30 p-6 md:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#8B00EE]/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
+            <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/20 border border-neutral-700/40 flex items-center justify-center text-neutral-300">
               <Download className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-base font-bold text-white font-mono uppercase tracking-wider">
                 Export Website CMS Configuration JSON
               </h3>
-              <p className="text-xs font-mono text-purple-300/80">
+              <p className="text-xs font-mono text-neutral-300/80">
                 Full headless JSON structure compatible with external frontends and deployments.
               </p>
             </div>
@@ -84,7 +84,7 @@ export const ExportJsonModal: React.FC<ExportModalProps> = ({
         </div>
 
         {/* JSON Preview Box */}
-        <div className="relative rounded-2xl bg-[#06010F] border border-white/10 p-4 max-h-96 overflow-y-auto font-mono text-xs text-purple-200 leading-relaxed">
+        <div className="relative rounded-2xl bg-[#0A0A0A] border border-white/10 p-4 max-h-96 overflow-y-auto font-mono text-xs text-neutral-300 leading-relaxed">
           <pre>{jsonString}</pre>
         </div>
 
@@ -99,7 +99,7 @@ export const ExportJsonModal: React.FC<ExportModalProps> = ({
               onClick={handleCopy}
               className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs font-mono font-bold flex items-center gap-2 border border-white/10 transition-all"
             >
-              {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+              {copied ? <Check className="w-4 h-4 text-green-300" /> : <Copy className="w-4 h-4" />}
               <span>{copied ? 'Copied to Clipboard!' : 'Copy JSON'}</span>
             </button>
             <ButterButton onClick={handleDownload} variant="purple" size="md" className="flex items-center gap-2">
@@ -175,17 +175,17 @@ export const ImportJsonModal: React.FC<ImportModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="w-full max-w-2xl rounded-3xl bg-[#0e041c] border border-cyan-500/30 p-6 md:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+      <div className="w-full max-w-2xl rounded-3xl bg-[#111111] border border-neutral-700/30 p-6 md:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300">
+            <div className="w-10 h-10 rounded-xl bg-neutral-800/20 border border-neutral-700/40 flex items-center justify-center text-neutral-300">
               <Upload className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-base font-bold text-white font-mono uppercase tracking-wider">
                 Import Website CMS Configuration
               </h3>
-              <p className="text-xs font-mono text-cyan-300/80">
+              <p className="text-xs font-mono text-neutral-300/80">
                 Upload or paste a JSON configuration file to restore or synchronize content.
               </p>
             </div>
@@ -199,10 +199,10 @@ export const ImportJsonModal: React.FC<ImportModalProps> = ({
         </div>
 
         {/* File Upload Drop Area */}
-        <div className="p-4 rounded-2xl bg-[#06010F] border-2 border-dashed border-white/10 hover:border-cyan-500/50 text-center transition-all">
-          <FileJson className="w-8 h-8 text-cyan-400 mx-auto mb-2 opacity-80" />
+        <div className="p-4 rounded-2xl bg-[#0A0A0A] border-2 border-dashed border-white/10 hover:border-neutral-700/50 text-center transition-all">
+          <FileJson className="w-8 h-8 text-neutral-300 mx-auto mb-2 opacity-80" />
           <label className="text-xs font-mono text-slate-300 cursor-pointer block">
-            <span className="text-cyan-400 font-bold underline">Choose .json file</span> or drag and drop
+            <span className="text-neutral-300 font-bold underline">Choose .json file</span> or drag and drop
             <input
               type="file"
               accept=".json,application/json"
@@ -225,13 +225,13 @@ export const ImportJsonModal: React.FC<ImportModalProps> = ({
               setValidationError(null);
             }}
             placeholder='{\n  "hero": { ... },\n  "deployments": [ ... ]\n}'
-            className="w-full px-4 py-3 rounded-2xl bg-[#06010F] border border-white/10 text-cyan-200 font-mono text-xs focus:outline-none focus:border-cyan-500"
+            className="w-full px-4 py-3 rounded-2xl bg-[#0A0A0A] border border-white/10 text-neutral-300 font-mono text-xs focus:outline-none focus:border-neutral-700"
           />
         </div>
 
         {/* Validation Error Banner */}
         {validationError && (
-          <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono flex items-center gap-2">
+          <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-mono flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>{validationError}</span>
           </div>
@@ -270,8 +270,8 @@ export const ResetToDefaultsModal: React.FC<ResetModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="w-full max-w-md rounded-3xl bg-[#0e041c] border border-amber-500/30 p-6 md:p-8 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-200">
-        <div className="flex items-center gap-3 text-amber-400">
+      <div className="w-full max-w-md rounded-3xl bg-[#111111] border border-amber-500/30 p-6 md:p-8 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-200">
+        <div className="flex items-center gap-3 text-amber-200">
           <RotateCcw className="w-6 h-6" />
           <h3 className="text-base font-bold text-white font-mono">Reset CMS to Defaults?</h3>
         </div>

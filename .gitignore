@@ -86,3 +86,18 @@ Thumbs.db
 # =============================================================================
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Backups, archives, local QA
+*.zip
+*.7z
+*.rar
+*backup*/
+*-backup-*
+*.bak
+.env*
+!.env.example
+*.log
+dev*.log
+/three-qa/
+.vercel

@@ -233,19 +233,19 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
   const currentModelInfo = GEMINI_MODELS.find((m) => m.id === selectedModel) || GEMINI_MODELS[0];
 
   return (
-    <aside className="w-full sm:w-96 md:w-[440px] bg-[#06010F]/98 backdrop-blur-3xl h-full flex flex-col justify-between border-l border-purple-500/20 select-none shadow-[-25px_0_70px_rgba(0,0,0,0.9)] z-40 relative overflow-hidden font-sans">
+    <aside className="w-full sm:w-96 md:w-[440px] bg-[#0A0A0A]/98 backdrop-blur-3xl h-full flex flex-col justify-between border-l border-neutral-700/20 select-none shadow-[-25px_0_70px_rgba(0,0,0,0.9)] z-40 relative overflow-hidden font-sans">
       {/* Background Ambient Cyber Glows */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#8B00EE]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/3 left-0 w-64 h-64 bg-[#38BDF8]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#3B82F6]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute bottom-1/3 left-0 w-64 h-64 bg-[#A1A1A1]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
       {/* 1. Header & Controls with High Z-Index to Prevent Message Overlapping */}
-      <div className="p-4 border-b border-purple-500/20 flex flex-col gap-3 relative z-50 bg-[#0D041A]/95 backdrop-blur-2xl shadow-lg">
+      <div className="p-4 border-b border-neutral-700/20 flex flex-col gap-3 relative z-50 bg-[#111111]/95 backdrop-blur-2xl shadow-lg">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-tr from-[#8B00EE] to-[#38BDF8] p-[1px] shadow-[0_0_20px_rgba(139,0,238,0.5)]">
-              <div className="w-full h-full bg-[#06010F] rounded-[11px] flex items-center justify-center">
-                <Bot className="w-4 h-4 text-[#38BDF8] animate-pulse" />
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-tr from-[#3B82F6] to-[#A1A1A1] p-[1px] shadow-[0_0_20px_rgba(59, 130, 246,0.5)]">
+              <div className="w-full h-full bg-[#0A0A0A] rounded-[11px] flex items-center justify-center">
+                <Bot className="w-4 h-4 text-[#A1A1A1] animate-pulse" />
               </div>
             </div>
             <div>
@@ -253,11 +253,11 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
                 <span className="text-xs font-black text-white tracking-wider font-mono">
                   ANORIX AI COPILOT
                 </span>
-                <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-green-500/10 text-green-300 border border-green-500/30">
                   POSTGRES SYNCED
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-purple-300/80 block">
+              <span className="text-[10px] font-mono text-neutral-300/80 block">
                 Google GenAI • Database Analytics Boss
               </span>
             </div>
@@ -268,7 +268,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               onClick={() => setShowKeyConfig(!showKeyConfig)}
               className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                 showKeyConfig || customApiKey
-                  ? 'bg-purple-500/20 border-purple-500 text-purple-300'
+                  ? 'bg-neutral-800/20 border-neutral-700 text-neutral-300'
                   : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
               }`}
               title="Configure Custom Gemini API Key"
@@ -287,7 +287,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
             {onClose && (
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 border border-white/10 hover:border-rose-500/30 text-slate-400 hover:text-rose-300 transition-all cursor-pointer"
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 border border-white/10 hover:border-red-500/30 text-slate-400 hover:text-red-300 transition-all cursor-pointer"
                 title="Close Assistant"
               >
                 <X className="w-3.5 h-3.5" />
@@ -298,17 +298,17 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
 
         {/* Custom API Key Tray (Collapsible) */}
         {showKeyConfig && (
-          <div className="p-3 rounded-xl bg-[#130728] border border-purple-500/40 space-y-2 animate-in fade-in slide-in-from-top-2 shadow-2xl">
+          <div className="p-3 rounded-xl bg-[#171717] border border-neutral-700/40 space-y-2 animate-in fade-in slide-in-from-top-2 shadow-2xl">
             <div className="flex items-center justify-between text-[10px] font-mono">
-              <span className="text-purple-300 font-bold flex items-center gap-1">
-                <Key className="w-3 h-3 text-cyan-300" />
+              <span className="text-neutral-300 font-bold flex items-center gap-1">
+                <Key className="w-3 h-3 text-neutral-300" />
                 Google AI Studio API Key
               </span>
               <a
                 href="https://aistudio.google.com/app/apikey"
                 target="_blank"
                 rel="noreferrer"
-                className="text-cyan-300 hover:underline flex items-center gap-0.5 text-[9px]"
+                className="text-neutral-300 hover:underline flex items-center gap-0.5 text-[9px]"
               >
                 Get Key ↗
               </a>
@@ -318,7 +318,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               value={customApiKey}
               onChange={(e) => handleSaveCustomKey(e.target.value)}
               placeholder="Paste API key (leave blank to use .env.local)"
-              className="w-full px-2.5 py-1.5 rounded-lg bg-[#090214] border border-white/10 text-white font-mono text-[11px] focus:outline-none focus:border-[#8B00EE]"
+              className="w-full px-2.5 py-1.5 rounded-lg bg-[#0A0A0A] border border-white/10 text-white font-mono text-[11px] focus:outline-none focus:border-[#3B82F6]"
             />
             <p className="text-[9px] font-mono text-slate-400 leading-tight">
               Pre-configured .env.local key is active. Override here if desired.
@@ -330,16 +330,16 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
-            className="w-full px-3 py-2 rounded-xl bg-[#130728] hover:bg-[#1a0c36] border border-purple-500/30 hover:border-purple-500/60 transition-all flex items-center justify-between text-left cursor-pointer group shadow-sm"
+            className="w-full px-3 py-2 rounded-xl bg-[#171717] hover:bg-[#1a0c36] border border-neutral-700/30 hover:border-neutral-700/60 transition-all flex items-center justify-between text-left cursor-pointer group shadow-sm"
           >
             <div className="flex items-center gap-2 min-w-0">
-              <Cpu className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
+              <Cpu className="w-3.5 h-3.5 text-[#A1A1A1] shrink-0" />
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-1.5">
                   <span className="text-xs font-bold text-white truncate font-mono">
                     {currentModelInfo.name}
                   </span>
-                  <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-[#38BDF8]/10 text-[#38BDF8] border border-[#38BDF8]/30 shrink-0">
+                  <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-[#A1A1A1]/10 text-[#A1A1A1] border border-[#A1A1A1]/30 shrink-0">
                     {currentModelInfo.badge}
                   </span>
                 </div>
@@ -357,8 +357,8 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
 
           {/* Dropdown Menu (Solid Opaque High-Z Background to Prevent Message Overlap) */}
           {isModelDropdownOpen && (
-            <div className="absolute top-full left-0 right-0 mt-1.5 p-1.5 rounded-2xl bg-[#0D041A] border border-purple-500/60 shadow-[0_20px_60px_rgba(0,0,0,0.98)] z-[100] space-y-1 backdrop-blur-3xl animate-in fade-in slide-in-from-top-1">
-              <div className="px-2 py-1 text-[9px] font-mono font-bold text-[#a393eb]/80 uppercase tracking-wider border-b border-white/5 pb-1">
+            <div className="absolute top-full left-0 right-0 mt-1.5 p-1.5 rounded-2xl bg-[#111111] border border-neutral-700/60 shadow-[0_20px_60px_rgba(0,0,0,0.98)] z-[100] space-y-1 backdrop-blur-3xl animate-in fade-in slide-in-from-top-1">
+              <div className="px-2 py-1 text-[9px] font-mono font-bold text-[#A1A1A1]/80 uppercase tracking-wider border-b border-white/5 pb-1">
                 Select Google Gemini Model
               </div>
               {GEMINI_MODELS.map((model) => {
@@ -369,14 +369,14 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
                     onClick={() => handleSelectModel(model.id)}
                     className={`p-2 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
                       isSelected
-                        ? 'bg-purple-600/30 border border-purple-500 text-white shadow-[0_0_15px_rgba(139,0,238,0.3)]'
+                        ? 'bg-neutral-800/30 border border-neutral-700 text-white shadow-[0_0_15px_rgba(59, 130, 246,0.3)]'
                         : 'hover:bg-white/5 text-slate-300 hover:text-white border border-transparent'
                     }`}
                   >
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center gap-1.5">
                         <span className="text-xs font-bold font-mono text-white">{model.name}</span>
-                        <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-white/10 text-cyan-300">
+                        <span className="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-white/10 text-neutral-300">
                           {model.badge}
                         </span>
                       </div>
@@ -384,7 +384,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
                         {model.description}
                       </span>
                     </div>
-                    <span className="text-[9px] font-mono text-purple-300 font-bold shrink-0 ml-2">
+                    <span className="text-[9px] font-mono text-neutral-300 font-bold shrink-0 ml-2">
                       {model.speed}
                     </span>
                   </div>
@@ -405,7 +405,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               className={`flex gap-2.5 ${isAi ? 'justify-start' : 'justify-end'} group`}
             >
               {isAi && (
-                <div className="w-7 h-7 rounded-xl bg-[#14072b] border border-purple-500/40 flex items-center justify-center shrink-0 text-[#38BDF8] mt-1 shadow-[0_0_15px_rgba(139,0,238,0.35)]">
+                <div className="w-7 h-7 rounded-xl bg-[#171717] border border-neutral-700/40 flex items-center justify-center shrink-0 text-[#A1A1A1] mt-1 shadow-[0_0_15px_rgba(59, 130, 246,0.35)]">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
@@ -413,17 +413,17 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               <div
                 className={`max-w-[88%] rounded-2xl p-3.5 text-xs leading-relaxed space-y-2.5 relative transition-all ${
                   isAi
-                    ? 'bg-[#0E051E]/95 border border-purple-500/30 text-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.6)] backdrop-blur-md'
-                    : 'bg-gradient-to-r from-[#8B00EE] via-[#7c3aed] to-[#6366f1] text-white font-medium shadow-[0_0_25px_rgba(139,0,238,0.45)]'
+                    ? 'bg-[#0E051E]/95 border border-neutral-700/30 text-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.6)] backdrop-blur-md'
+                    : 'bg-gradient-to-r from-[#3B82F6] via-[#3B82F6] to-[#3B82F6] text-white font-medium shadow-[0_0_25px_rgba(59, 130, 246,0.45)]'
                 }`}
               >
                 {/* Message Content with Markdown & Cyber Text Styling */}
-                <div className="whitespace-pre-wrap font-sans text-xs break-words selection:bg-purple-500 selection:text-white space-y-2">
+                <div className="whitespace-pre-wrap font-sans text-xs break-words selection:bg-neutral-800 selection:text-white space-y-2">
                   {msg.text}
                 </div>
 
                 <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-white/10 text-[9px] font-mono text-slate-400">
-                  <span className="text-purple-300/70">{msg.timestamp}</span>
+                  <span className="text-neutral-300/70">{msg.timestamp}</span>
                   {isAi && (
                     <button
                       onClick={() => handleCopy(msg.id, msg.text)}
@@ -432,8 +432,8 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
                     >
                       {copiedId === msg.id ? (
                         <>
-                          <Check className="w-2.5 h-2.5 text-emerald-400" />
-                          <span className="text-emerald-400 font-bold">Copied</span>
+                          <Check className="w-2.5 h-2.5 text-green-300" />
+                          <span className="text-green-300 font-bold">Copied</span>
                         </>
                       ) : (
                         <>
@@ -447,7 +447,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               </div>
 
               {!isAi && (
-                <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#8B00EE] to-[#38BDF8] flex items-center justify-center shrink-0 text-white mt-1 shadow-md">
+                <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#3B82F6] to-[#A1A1A1] flex items-center justify-center shrink-0 text-white mt-1 shadow-md">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -457,8 +457,8 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
 
         {/* Typing indicator */}
         {isTyping && (
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-300 animate-pulse pl-1 bg-[#130728]/80 p-2.5 rounded-xl border border-purple-500/30 w-fit">
-            <div className="w-5 h-5 rounded-lg bg-[#14072b] border border-purple-500/40 flex items-center justify-center text-[#38BDF8]">
+          <div className="flex items-center gap-2 text-xs font-mono text-neutral-300 animate-pulse pl-1 bg-[#171717]/80 p-2.5 rounded-xl border border-neutral-700/30 w-fit">
+            <div className="w-5 h-5 rounded-lg bg-[#171717] border border-neutral-700/40 flex items-center justify-center text-[#A1A1A1]">
               <Sparkles className="w-3 h-3 animate-spin" />
             </div>
             <span>Querying PostgreSQL & {selectedModel}...</span>
@@ -469,7 +469,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
       </div>
 
       {/* 4. Real-time Analytics Suggestion Chips & Cybernetic Input Bar */}
-      <div className="p-3 border-t border-purple-500/20 bg-[#0D041A]/95 backdrop-blur-2xl space-y-2.5 relative z-10">
+      <div className="p-3 border-t border-neutral-700/20 bg-[#111111]/95 backdrop-blur-2xl space-y-2.5 relative z-10">
         {/* Suggestion Chips */}
         <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-0.5">
           {suggestedQuestions.map((q) => (
@@ -477,7 +477,7 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
               key={q}
               onClick={() => handleSend(q)}
               disabled={isTyping}
-              className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#14072b] hover:bg-[#200c42] border border-purple-500/30 text-purple-200 whitespace-nowrap transition-all cursor-pointer shrink-0 hover:border-cyan-400 disabled:opacity-50 shadow-sm"
+              className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#171717] hover:bg-[#200c42] border border-neutral-700/30 text-neutral-300 whitespace-nowrap transition-all cursor-pointer shrink-0 hover:border-neutral-700 disabled:opacity-50 shadow-sm"
             >
               {q}
             </button>
@@ -498,12 +498,12 @@ export const RightAiAssistant: React.FC<RightAiAssistantProps> = ({ onCloseMobil
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Ask Analytics Boss (${selectedModel})...`}
             disabled={isTyping}
-            className="flex-1 px-3.5 py-2 rounded-xl bg-[#130728] border border-purple-500/30 text-white placeholder-slate-500 font-sans text-xs focus:outline-none focus:border-[#38BDF8] focus:shadow-[0_0_15px_rgba(56,189,248,0.3)] transition-all disabled:opacity-50"
+            className="flex-1 px-3.5 py-2 rounded-xl bg-[#171717] border border-neutral-700/30 text-white placeholder-slate-500 font-sans text-xs focus:outline-none focus:border-[#A1A1A1] focus:shadow-[0_0_15px_rgba(161, 161, 161,0.3)] transition-all disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={!input.trim() || isTyping}
-            className="p-2 rounded-xl bg-gradient-to-r from-[#8B00EE] to-[#38BDF8] text-white shadow-[0_0_20px_rgba(139,0,238,0.6)] hover:shadow-[0_0_30px_rgba(56,189,248,0.8)] transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shrink-0"
+            className="p-2 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#A1A1A1] text-white shadow-[0_0_20px_rgba(59, 130, 246,0.6)] hover:shadow-[0_0_30px_rgba(161, 161, 161,0.8)] transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shrink-0"
             title="Send Query"
           >
             <Send className="w-4 h-4" />

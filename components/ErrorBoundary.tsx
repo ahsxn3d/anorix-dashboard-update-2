@@ -34,21 +34,21 @@ export class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="p-6 my-4 rounded-2xl bg-[#130728]/90 border border-rose-500/40 text-center space-y-4 shadow-2xl backdrop-blur-xl">
-          <div className="w-12 h-12 mx-auto rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
-            <AlertTriangle className="w-6 h-6 text-rose-400" />
+        <div className="p-6 my-4 rounded-2xl bg-[#171717]/90 border border-red-500/40 text-center space-y-4 shadow-2xl backdrop-blur-xl">
+          <div className="w-12 h-12 mx-auto rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+            <AlertTriangle className="w-6 h-6 text-red-300" />
           </div>
           <div className="space-y-1">
             <h3 className="text-sm font-bold text-white font-mono">
               {this.props.fallbackTitle || 'Component Rendering Recovered'}
             </h3>
-            <p className="text-xs text-rose-300/80 font-mono max-w-md mx-auto">
+            <p className="text-xs text-red-300/80 font-mono max-w-md mx-auto">
               {this.state.error?.message || 'An unexpected rendering error occurred.'}
             </p>
           </div>
           <button
             onClick={this.handleReset}
-            className="px-4 py-2 rounded-xl bg-[#a855f7] hover:bg-[#9333ea] text-white text-xs font-bold font-mono inline-flex items-center gap-2 cursor-pointer transition-all shadow-lg shadow-[#a855f7]/30"
+            className="px-4 py-2 rounded-xl bg-[#3B82F6] hover:bg-[#3B82F6] text-white text-xs font-bold font-mono inline-flex items-center gap-2 cursor-pointer transition-all shadow-lg shadow-[#3B82F6]/30"
           >
             <RefreshCcw className="w-3.5 h-3.5" /> Reload View
           </button>

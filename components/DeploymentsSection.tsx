@@ -517,20 +517,20 @@ export const DeploymentsSection: React.FC = () => {
     <div className="space-y-6">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#130728] border border-[#a855f7]/50 text-white shadow-2xl shadow-[#a855f7]/30 text-sm font-medium animate-in fade-in slide-in-from-bottom-5">
-          <Sparkles className="w-4 h-4 text-[#a855f7] animate-pulse" />
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#171717] border border-[#3B82F6]/50 text-white shadow-2xl shadow-[#3B82F6]/30 text-sm font-medium animate-in fade-in slide-in-from-bottom-5">
+          <Sparkles className="w-4 h-4 text-[#3B82F6] animate-pulse" />
           <span>{toastMessage}</span>
         </div>
       )}
 
       {/* Top Overview Cards with DashboardHoloCard 3D Physics */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
-        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(139, 0, 238, 0.45)">
+        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(59, 130, 246, 0.45)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#a393eb]">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#A1A1A1]">
               <CyberScrambleText text="Total Deployments" scrambleSpeed={25} />
             </span>
-            <FolderKanban className="w-4 h-4 text-[#8B00EE]" />
+            <FolderKanban className="w-4 h-4 text-[#3B82F6]" />
           </div>
           <div className="mt-2 text-2xl font-black text-white font-mono">
             <CyberScrambleText text={String(totalCount)} scrambleSpeed={25} />
@@ -540,26 +540,26 @@ export const DeploymentsSection: React.FC = () => {
 
         <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(16, 185, 129, 0.4)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-green-300">
               <CyberScrambleText text="API Endpoint Sync" scrambleSpeed={25} />
             </span>
-            <Globe className="w-4 h-4 text-emerald-400" />
+            <Globe className="w-4 h-4 text-green-300" />
           </div>
-          <div className="mt-2 text-2xl font-black text-emerald-400 font-mono flex items-center gap-2">
+          <div className="mt-2 text-2xl font-black text-green-300 font-mono flex items-center gap-2">
             <span>/api/deployments</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-ping" />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Direct REST Synchronization</p>
         </DashboardHoloCard>
 
-        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(56, 189, 248, 0.4)">
+        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(161, 161, 161, 0.4)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#38bdf8]">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#A1A1A1]">
               <CyberScrambleText text="Featured Showcase" scrambleSpeed={25} />
             </span>
-            <Star className="w-4 h-4 text-[#38bdf8]" />
+            <Star className="w-4 h-4 text-[#A1A1A1]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#38bdf8] font-mono">
+          <div className="mt-2 text-2xl font-black text-[#A1A1A1] font-mono">
             <CyberScrambleText text={String(featuredCount)} scrambleSpeed={25} />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Homepage hero priority</p>
@@ -567,12 +567,12 @@ export const DeploymentsSection: React.FC = () => {
 
         <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(245, 158, 11, 0.4)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-amber-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-amber-200">
               <CyberScrambleText text="Avg Web Vitals" scrambleSpeed={25} />
             </span>
-            <Zap className="w-4 h-4 text-amber-400" />
+            <Zap className="w-4 h-4 text-amber-200" />
           </div>
-          <div className="mt-2 text-2xl font-black text-amber-300 font-mono">
+          <div className="mt-2 text-2xl font-black text-amber-200 font-mono">
             <CyberScrambleText text={`${avgAudit}/100`} scrambleSpeed={25} />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Lighthouse performance</p>
@@ -580,24 +580,24 @@ export const DeploymentsSection: React.FC = () => {
       </div>
 
       {/* Action Header & Search Controls */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-xl backdrop-blur-xl space-y-4">
+      <div className="p-4 sm:p-5 rounded-2xl bg-[#111111]/90 border border-white/10 shadow-xl backdrop-blur-xl space-y-4">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <FolderKanban className="w-5 h-5 text-[#a855f7] shrink-0" />
+              <FolderKanban className="w-5 h-5 text-[#3B82F6] shrink-0" />
               <KineticTitle text="DEPLOYMENTS MANAGER & SHOWCASE CONSOLE" size="sm" />
-              <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#a855f7]/20 text-[#c084fc] border border-[#a855f7]/30 shrink-0">
+              <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#3B82F6]/20 text-[#A1A1A1] border border-[#3B82F6]/30 shrink-0">
                 Live Website Schema
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-0.5">
-              Manage product cards, detail view modals, tech stacks, tags, features, and technical metrics synced with <code className="text-[#a855f7]">/api/deployments</code>.
+              Manage product cards, detail view modals, tech stacks, tags, features, and technical metrics synced with <code className="text-[#3B82F6]">/api/deployments</code>.
             </p>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
             {/* View Mode Toggle */}
-            <div className="flex items-center p-1 rounded-xl bg-[#130728] border border-white/10 shrink-0">
+            <div className="flex items-center p-1 rounded-xl bg-[#171717] border border-white/10 shrink-0">
               <button
                 onClick={() => {
                   sound.playHoverTick();
@@ -605,7 +605,7 @@ export const DeploymentsSection: React.FC = () => {
                 }}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   viewMode === 'cards'
-                    ? 'bg-[#a855f7] text-white shadow-md shadow-[#a855f7]/40'
+                    ? 'bg-[#3B82F6] text-white shadow-md shadow-[#3B82F6]/40'
                     : 'text-slate-400 hover:text-white'
                 }`}
                 title="Product Cards View"
@@ -620,7 +620,7 @@ export const DeploymentsSection: React.FC = () => {
                 }}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   viewMode === 'table'
-                    ? 'bg-[#a855f7] text-white shadow-md shadow-[#a855f7]/40'
+                    ? 'bg-[#3B82F6] text-white shadow-md shadow-[#3B82F6]/40'
                     : 'text-slate-400 hover:text-white'
                 }`}
                 title="Master Data Table"
@@ -654,7 +654,7 @@ export const DeploymentsSection: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by title, badge, category, or stack..."
-              className="w-full pl-8 pr-4 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]/50"
+              className="w-full pl-8 pr-4 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]/50"
             />
           </div>
 
@@ -671,8 +671,8 @@ export const DeploymentsSection: React.FC = () => {
                   }}
                   className={`px-3 py-1.5 text-[11px] font-mono font-medium rounded-lg whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                     categoryFilter === cat
-                      ? 'bg-[#a855f7] text-white font-bold shadow-md shadow-[#a855f7]/30'
-                      : 'bg-[#130728] text-slate-400 hover:text-white border border-white/5 hover:border-white/20'
+                      ? 'bg-[#3B82F6] text-white font-bold shadow-md shadow-[#3B82F6]/30'
+                      : 'bg-[#171717] text-slate-400 hover:text-white border border-white/5 hover:border-white/20'
                   }`}
                 >
                   {cat === 'ALL' ? 'ALL CATEGORIES' : cat}
@@ -711,14 +711,14 @@ export const DeploymentsSection: React.FC = () => {
       {viewMode === 'cards' && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDeployments.length === 0 ? (
-            <div className="col-span-full py-20 px-6 text-center rounded-3xl bg-[#0d061e]/60 border border-purple-500/20 backdrop-blur-xl space-y-4 shadow-2xl">
+            <div className="col-span-full py-20 px-6 text-center rounded-3xl bg-[#111111]/60 border border-neutral-700/20 backdrop-blur-xl space-y-4 shadow-2xl">
               <div className="relative w-12 h-12 mx-auto flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-purple-500/20 animate-ping" />
-                <FolderKanban className="w-6 h-6 text-[#8B00EE] relative z-10" />
+                <div className="absolute inset-0 rounded-full bg-neutral-800/20 animate-ping" />
+                <FolderKanban className="w-6 h-6 text-[#3B82F6] relative z-10" />
               </div>
               <div className="space-y-1">
                 <h4 className="text-sm font-bold text-white">No deployments registered.</h4>
-                <p className="text-xs font-mono text-[#a393eb]/70 max-w-md mx-auto">
+                <p className="text-xs font-mono text-[#A1A1A1]/70 max-w-md mx-auto">
                   Click &apos;New Deployment&apos; to publish your first production artifact to the PostgreSQL database.
                 </p>
               </div>
@@ -739,7 +739,7 @@ export const DeploymentsSection: React.FC = () => {
               <DashboardHoloCard
                 key={dep.id}
                 className="overflow-hidden shadow-2xl flex flex-col justify-between group p-0"
-                glowColor={dep.isFeatured ? 'rgba(139, 0, 238, 0.45)' : 'rgba(56, 189, 248, 0.35)'}
+                glowColor={dep.isFeatured ? 'rgba(59, 130, 246, 0.45)' : 'rgba(161, 161, 161, 0.35)'}
               >
                 <div>
                   {/* Thumbnail Cover with Floating Badges & Performance Benchmarks */}
@@ -749,16 +749,16 @@ export const DeploymentsSection: React.FC = () => {
                       alt={dep.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d061e] via-transparent to-black/60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/60" />
 
                     {/* Top Floating Badges */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#38bdf8] border border-[#38bdf8]/30">
+                        <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#A1A1A1] border border-[#A1A1A1]/30">
                           {dep.category}
                         </span>
                         {dep.badge && (
-                          <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-extrabold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                          <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-extrabold uppercase bg-amber-500/20 text-amber-200 border border-amber-500/40 backdrop-blur-md">
                             {dep.badge}
                           </span>
                         )}
@@ -782,14 +782,14 @@ export const DeploymentsSection: React.FC = () => {
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
                       <div className="flex items-center gap-2">
                         {dep.rating && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black/75 backdrop-blur-md text-amber-300 border border-amber-500/30 flex items-center gap-1">
-                            <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black/75 backdrop-blur-md text-amber-200 border border-amber-500/30 flex items-center gap-1">
+                            <Star className="w-3 h-3 fill-amber-400 text-amber-200" />
                             {dep.rating.toFixed(1)}
                           </span>
                         )}
                         {dep.usersCount && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black/75 backdrop-blur-md text-cyan-300 border border-cyan-500/30 flex items-center gap-1">
-                            <Users className="w-3 h-3 text-cyan-400" />
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black/75 backdrop-blur-md text-neutral-300 border border-neutral-700/30 flex items-center gap-1">
+                            <Users className="w-3 h-3 text-neutral-300" />
                             {dep.usersCount}
                           </span>
                         )}
@@ -802,7 +802,7 @@ export const DeploymentsSection: React.FC = () => {
                       </div>
 
                       {dep.isFeatured && (
-                        <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#a855f7]/80 text-white shadow-md">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#3B82F6]/80 text-white shadow-md">
                           ★ Featured
                         </span>
                       )}
@@ -813,23 +813,23 @@ export const DeploymentsSection: React.FC = () => {
                   <div className="p-4 sm:p-5 space-y-3">
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <h3 className="text-base font-bold text-white group-hover:text-[#c084fc] transition-colors line-clamp-1">
+                        <h3 className="text-base font-bold text-white group-hover:text-[#A1A1A1] transition-colors line-clamp-1">
                           {dep.title}
                         </h3>
                         <p className="text-[11px] text-slate-400 font-mono mt-0.5">
-                          ID: <code className="text-[#c084fc]">{dep.id}</code> {dep.client && `• ${dep.client}`}
+                          ID: <code className="text-[#A1A1A1]">{dep.id}</code> {dep.client && `• ${dep.client}`}
                         </p>
                       </div>
                       <button
                         onClick={() => handleToggleFeatured(dep)}
                         className={`p-1.5 rounded-xl border transition-all cursor-pointer ${
                           dep.isFeatured
-                            ? 'bg-[#a855f7]/20 border-[#a855f7] text-[#c084fc] shadow-[0_0_12px_rgba(168,85,247,0.4)]'
+                            ? 'bg-[#3B82F6]/20 border-[#3B82F6] text-[#A1A1A1] shadow-[0_0_12px_rgba(59, 130, 246,0.4)]'
                             : 'bg-white/5 border-white/10 text-slate-500 hover:text-white'
                         }`}
                         title="Toggle isFeatured"
                       >
-                        <Star className={`w-4 h-4 ${dep.isFeatured ? 'fill-current text-[#c084fc]' : ''}`} />
+                        <Star className={`w-4 h-4 ${dep.isFeatured ? 'fill-current text-[#A1A1A1]' : ''}`} />
                       </button>
                     </div>
 
@@ -842,7 +842,7 @@ export const DeploymentsSection: React.FC = () => {
                       {dep.techStack && dep.techStack.slice(0, 4).map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#130728] text-purple-200 border border-purple-500/20"
+                          className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#171717] text-neutral-300 border border-neutral-700/20"
                         >
                           {tech}
                         </span>
@@ -863,7 +863,7 @@ export const DeploymentsSection: React.FC = () => {
                             className="p-1.5 rounded-lg bg-black/40 border border-white/5 flex flex-col"
                           >
                             <span className="text-[9px] font-mono text-slate-400 truncate">{tm.label}</span>
-                            <span className="text-xs font-mono font-bold text-cyan-300 truncate">{tm.value}</span>
+                            <span className="text-xs font-mono font-bold text-neutral-300 truncate">{tm.value}</span>
                           </div>
                         ))}
                       </div>
@@ -879,7 +879,7 @@ export const DeploymentsSection: React.FC = () => {
                         href={dep.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-2.5 py-1.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 text-cyan-300 border border-cyan-500/30 text-[11px] font-mono font-bold flex items-center gap-1 transition-colors"
+                        className="px-2.5 py-1.5 rounded-lg bg-neutral-800/40 hover:bg-neutral-800/60 text-neutral-300 border border-neutral-700/30 text-[11px] font-mono font-bold flex items-center gap-1 transition-colors"
                         title="Visit Live Demo"
                       >
                         <span>VISIT DEMO</span>
@@ -892,7 +892,7 @@ export const DeploymentsSection: React.FC = () => {
                         href={dep.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg bg-white/5 hover:bg-purple-950/40 text-purple-300 border border-purple-500/30 transition-colors"
+                        className="p-1.5 rounded-lg bg-white/5 hover:bg-neutral-800/40 text-neutral-300 border border-neutral-700/30 transition-colors"
                         title="GitHub Repository"
                       >
                         <Code2 className="w-3.5 h-3.5" />
@@ -914,7 +914,7 @@ export const DeploymentsSection: React.FC = () => {
                         sound.playHoverTick();
                         handleOpenEditModal(dep);
                       }}
-                      className="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-[#a855f7]/20 text-slate-200 hover:text-white border border-white/10 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-[#3B82F6]/20 text-slate-200 hover:text-white border border-white/10 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <Edit2 className="w-3 h-3" />
                       <span>Edit</span>
@@ -924,7 +924,7 @@ export const DeploymentsSection: React.FC = () => {
                         sound.playHoverTick();
                         handleDelete(dep.id, dep.title);
                       }}
-                      className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 border border-white/10 transition-colors cursor-pointer"
+                      className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-300 border border-white/10 transition-colors cursor-pointer"
                       title="Delete Product"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -941,10 +941,10 @@ export const DeploymentsSection: React.FC = () => {
       {/* 2. MASTER TABLE VIEW */}
       {/* ========================================================================= */}
       {viewMode === 'table' && (
-        <div className="rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
+        <div className="rounded-2xl bg-[#111111]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-[#130728]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
+              <thead className="bg-[#171717]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
                 <tr>
                   <th className="py-3.5 px-4">Preview</th>
                   <th className="py-3.5 px-4">Title & ID</th>
@@ -975,7 +975,7 @@ export const DeploymentsSection: React.FC = () => {
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                           {dep.isFeatured && (
-                            <div className="absolute top-0.5 right-0.5 p-0.5 rounded-full bg-[#a855f7] text-white">
+                            <div className="absolute top-0.5 right-0.5 p-0.5 rounded-full bg-[#3B82F6] text-white">
                               <Star className="w-2.5 h-2.5 fill-current" />
                             </div>
                           )}
@@ -991,7 +991,7 @@ export const DeploymentsSection: React.FC = () => {
                               href={dep.demoUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[#a855f7] hover:text-[#c084fc] transition-colors"
+                              className="text-[#3B82F6] hover:text-[#A1A1A1] transition-colors"
                               title="Visit Demo"
                             >
                               <ExternalLink className="w-3 h-3" />
@@ -999,14 +999,14 @@ export const DeploymentsSection: React.FC = () => {
                           )}
                         </div>
                         <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 mt-0.5">
-                          <span className="text-[#c084fc]">ID: {dep.id}</span>
+                          <span className="text-[#A1A1A1]">ID: {dep.id}</span>
                           <button
                             onClick={() => handleCopySlug(dep.id)}
                             className="text-slate-500 hover:text-slate-300 transition-colors"
                             title="Copy ID"
                           >
                             {copiedSlug === dep.id ? (
-                              <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                              <CheckCircle2 className="w-3 h-3 text-green-300" />
                             ) : (
                               <Copy className="w-3 h-3" />
                             )}
@@ -1017,11 +1017,11 @@ export const DeploymentsSection: React.FC = () => {
                       {/* Category & Badge */}
                       <td className="py-3 px-4 whitespace-nowrap">
                         <div className="flex flex-col gap-1">
-                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide uppercase bg-[#1e0d3b] text-[#c084fc] border border-[#a855f7]/30 w-fit">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide uppercase bg-[#171717] text-[#A1A1A1] border border-[#3B82F6]/30 w-fit">
                             {dep.category}
                           </span>
                           {dep.badge && (
-                            <span className="text-[10px] font-mono text-amber-400">
+                            <span className="text-[10px] font-mono text-amber-200">
                               [{dep.badge}]
                             </span>
                           )}
@@ -1031,8 +1031,8 @@ export const DeploymentsSection: React.FC = () => {
                       {/* Stats & Rating */}
                       <td className="py-3 px-4 whitespace-nowrap">
                         <div className="flex flex-col gap-0.5 font-mono text-[11px]">
-                          <span className="text-amber-300 flex items-center gap-1">
-                            <Star className="w-3 h-3 fill-amber-400 text-amber-400" /> {dep.rating?.toFixed(1) || '4.9'}
+                          <span className="text-amber-200 flex items-center gap-1">
+                            <Star className="w-3 h-3 fill-amber-400 text-amber-200" /> {dep.rating?.toFixed(1) || '4.9'}
                           </span>
                           <span className="text-slate-400 text-[10px]">
                             {dep.usersCount || '10k+ users'} • {dep.viewsCount || '50k views'}
@@ -1057,12 +1057,12 @@ export const DeploymentsSection: React.FC = () => {
                           onClick={() => handleToggleFeatured(dep)}
                           className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                             dep.isFeatured
-                              ? 'bg-[#a855f7]/20 border-[#a855f7]/50 text-[#c084fc]'
+                              ? 'bg-[#3B82F6]/20 border-[#3B82F6]/50 text-[#A1A1A1]'
                               : 'bg-white/5 border-white/10 text-slate-500 hover:text-slate-300'
                           }`}
                           title="Toggle isFeatured"
                         >
-                          <Star className={`w-3.5 h-3.5 ${dep.isFeatured ? 'fill-current text-[#c084fc]' : ''}`} />
+                          <Star className={`w-3.5 h-3.5 ${dep.isFeatured ? 'fill-current text-[#A1A1A1]' : ''}`} />
                         </button>
                       </td>
 
@@ -1093,14 +1093,14 @@ export const DeploymentsSection: React.FC = () => {
                           </button>
                           <button
                             onClick={() => handleOpenEditModal(dep)}
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-[#a855f7]/20 hover:text-[#c084fc] border border-white/10 text-slate-300 transition-colors cursor-pointer"
+                            className="p-1.5 rounded-lg bg-white/5 hover:bg-[#3B82F6]/20 hover:text-[#A1A1A1] border border-white/10 text-slate-300 transition-colors cursor-pointer"
                             title="Edit Deployment"
                           >
                             <Edit2 className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => handleDelete(dep.id, dep.title)}
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 hover:text-rose-400 border border-white/10 text-slate-400 transition-colors cursor-pointer"
+                            className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-300 border border-white/10 text-slate-400 transition-colors cursor-pointer"
                             title="Delete Deployment"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -1121,7 +1121,7 @@ export const DeploymentsSection: React.FC = () => {
       {/* ========================================================================= */}
       {detailModalItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-          <div className="relative w-full max-w-2xl my-8 rounded-3xl bg-[#0d041a] border border-purple-500/30 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-2xl my-8 rounded-3xl bg-[#111111] border border-neutral-700/30 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Header Image Cover */}
             <div className="relative h-60 w-full bg-black overflow-hidden">
               <img
@@ -1129,7 +1129,7 @@ export const DeploymentsSection: React.FC = () => {
                 alt={detailModalItem.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d041a] via-[#0d041a]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
               
               <button
                 onClick={() => setDetailModalItem(null)}
@@ -1141,11 +1141,11 @@ export const DeploymentsSection: React.FC = () => {
               <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                    <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-neutral-800/20 text-neutral-300 border border-neutral-700/40">
                       {detailModalItem.category}
                     </span>
                     {detailModalItem.badge && (
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-amber-500/20 text-amber-200 border border-amber-500/40">
                         {detailModalItem.badge}
                       </span>
                     )}
@@ -1154,8 +1154,8 @@ export const DeploymentsSection: React.FC = () => {
                 </div>
 
                 {detailModalItem.rating && (
-                  <div className="px-3 py-1.5 rounded-xl bg-black/70 border border-amber-500/40 flex items-center gap-1.5 font-mono text-amber-300 text-sm font-bold">
-                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <div className="px-3 py-1.5 rounded-xl bg-black/70 border border-amber-500/40 flex items-center gap-1.5 font-mono text-amber-200 text-sm font-bold">
+                    <Star className="w-4 h-4 fill-amber-400 text-amber-200" />
                     <span>{detailModalItem.rating.toFixed(1)}</span>
                   </div>
                 )}
@@ -1166,7 +1166,7 @@ export const DeploymentsSection: React.FC = () => {
             <div className="p-6 space-y-5 max-h-[60vh] overflow-y-auto font-mono">
               {/* Short & Full Description */}
               <div>
-                <h4 className="text-xs uppercase tracking-wider text-purple-400 mb-1.5 font-bold">Overview & Architecture</h4>
+                <h4 className="text-xs uppercase tracking-wider text-neutral-300 mb-1.5 font-bold">Overview & Architecture</h4>
                 <p className="text-xs text-slate-200 leading-relaxed font-sans">
                   {detailModalItem.fullDescription || detailModalItem.shortDescription}
                 </p>
@@ -1175,15 +1175,15 @@ export const DeploymentsSection: React.FC = () => {
               {/* Technical Metrics Grid */}
               {detailModalItem.technicalMetrics && detailModalItem.technicalMetrics.length > 0 && (
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider text-cyan-400 mb-2 font-bold flex items-center gap-1.5">
+                  <h4 className="text-xs uppercase tracking-wider text-neutral-300 mb-2 font-bold flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5" />
                     <span>Live Technical Metrics</span>
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {detailModalItem.technicalMetrics.map((tm, idx) => (
-                      <div key={idx} className="p-2.5 rounded-xl bg-[#130728] border border-cyan-500/20">
+                      <div key={idx} className="p-2.5 rounded-xl bg-[#171717] border border-neutral-700/20">
                         <div className="text-[10px] text-slate-400">{tm.label}</div>
-                        <div className="text-xs font-bold text-cyan-300 mt-0.5">{tm.value}</div>
+                        <div className="text-xs font-bold text-neutral-300 mt-0.5">{tm.value}</div>
                       </div>
                     ))}
                   </div>
@@ -1193,7 +1193,7 @@ export const DeploymentsSection: React.FC = () => {
               {/* Features Bullet List */}
               {detailModalItem.features && detailModalItem.features.length > 0 && (
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider text-emerald-400 mb-2 font-bold flex items-center gap-1.5">
+                  <h4 className="text-xs uppercase tracking-wider text-green-300 mb-2 font-bold flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>Key Features & Capabilities</span>
                   </h4>
@@ -1202,7 +1202,7 @@ export const DeploymentsSection: React.FC = () => {
                       const text = typeof f === 'string' ? f : `${f.key}: ${f.value}`;
                       return (
                         <li key={idx} className="flex items-start gap-2">
-                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <Check className="w-3.5 h-3.5 text-green-300 shrink-0 mt-0.5" />
                           <span>{text}</span>
                         </li>
                       );
@@ -1216,7 +1216,7 @@ export const DeploymentsSection: React.FC = () => {
                 <h4 className="text-xs uppercase tracking-wider text-slate-400 mb-2 font-bold">Tech Stack & Dependencies</h4>
                 <div className="flex flex-wrap gap-1.5">
                   {detailModalItem.techStack?.map((t, idx) => (
-                    <span key={idx} className="px-2.5 py-1 rounded-lg text-xs bg-purple-950/40 text-purple-200 border border-purple-500/30">
+                    <span key={idx} className="px-2.5 py-1 rounded-lg text-xs bg-neutral-800/40 text-neutral-300 border border-neutral-700/30">
                       {t}
                     </span>
                   ))}
@@ -1230,7 +1230,7 @@ export const DeploymentsSection: React.FC = () => {
             </div>
 
             {/* Modal Footer Links */}
-            <div className="p-5 bg-[#130728] border-t border-white/10 flex items-center justify-between">
+            <div className="p-5 bg-[#171717] border-t border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3 text-xs text-slate-400">
                 <span>{detailModalItem.usersCount || '10k+'} Users</span>
                 <span>•</span>
@@ -1254,7 +1254,7 @@ export const DeploymentsSection: React.FC = () => {
                     href={detailModalItem.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl bg-[#8B00EE] hover:bg-[#9d1cf3] text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-colors shadow-lg shadow-purple-600/30"
+                    className="px-4 py-2 rounded-xl bg-[#3B82F6] hover:bg-[#3B82F6] text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-colors shadow-lg shadow-neutral-800/30"
                   >
                     <span>VISIT DEMO</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -1271,11 +1271,11 @@ export const DeploymentsSection: React.FC = () => {
       {/* ========================================================================= */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-          <div className="relative w-full max-w-3xl my-8 rounded-3xl bg-[#0e061e] border border-purple-500/30 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-3xl my-8 rounded-3xl bg-[#111111] border border-neutral-700/30 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Modal Header */}
-            <div className="p-5 bg-[#130728] border-b border-white/10 flex items-center justify-between">
+            <div className="p-5 bg-[#171717] border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-[#a855f7]/20 text-[#c084fc] border border-[#a855f7]/30">
+                <div className="p-2 rounded-xl bg-[#3B82F6]/20 text-[#A1A1A1] border border-[#3B82F6]/30">
                   <FolderKanban className="w-5 h-5" />
                 </div>
                 <div>
@@ -1283,7 +1283,7 @@ export const DeploymentsSection: React.FC = () => {
                     {editingDepId ? `Edit Deployment: ${title}` : 'Create New Deployment'}
                   </h3>
                   <p className="text-xs text-slate-400 font-mono">
-                    Exact Live Website Schema Contract • Synced with <code className="text-[#a855f7]">/api/deployments</code>
+                    Exact Live Website Schema Contract • Synced with <code className="text-[#3B82F6]">/api/deployments</code>
                   </p>
                 </div>
               </div>
@@ -1300,7 +1300,7 @@ export const DeploymentsSection: React.FC = () => {
             <form onSubmit={handleSaveDeployment} className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
               {/* Section A: Basic Information */}
               <div className="space-y-4">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold border-b border-white/5 pb-1">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold border-b border-white/5 pb-1">
                   1. Basic Information
                 </h4>
 
@@ -1313,7 +1313,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={title}
                       onChange={(e) => handleTitleChange(e.target.value)}
                       placeholder="e.g. Aether Cloud Infrastructure"
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
@@ -1325,7 +1325,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={idSlug}
                       onChange={(e) => setIdSlug(e.target.value)}
                       placeholder="e.g. aether-cloud"
-                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#130728] border border-white/10 text-[#c084fc] placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#171717] border border-white/10 text-[#A1A1A1] placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
                 </div>
@@ -1350,7 +1350,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={badge}
                       onChange={(e) => setBadge(e.target.value)}
                       placeholder="FEATURED"
-                      className="w-full px-3 py-2 text-xs font-mono uppercase rounded-xl bg-[#130728] border border-white/10 text-amber-300 placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono uppercase rounded-xl bg-[#171717] border border-white/10 text-amber-200 placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <div className="flex flex-wrap gap-1 pt-1">
                       {BADGE_PRESETS.map((b) => (
@@ -1373,12 +1373,12 @@ export const DeploymentsSection: React.FC = () => {
                   {/* Is Featured Checkbox */}
                   <div className="space-y-1.5 flex flex-col justify-center">
                     <label className="text-xs font-semibold text-slate-300">Featured Flag</label>
-                    <label className="flex items-center gap-2.5 p-2 rounded-xl bg-[#130728] border border-white/10 cursor-pointer">
+                    <label className="flex items-center gap-2.5 p-2 rounded-xl bg-[#171717] border border-white/10 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={isFeatured}
                         onChange={(e) => setIsFeatured(e.target.checked)}
-                        className="w-4 h-4 rounded text-[#a855f7] bg-[#0e061e] border-white/20 focus:ring-0 cursor-pointer"
+                        className="w-4 h-4 rounded text-[#3B82F6] bg-[#111111] border-white/20 focus:ring-0 cursor-pointer"
                       />
                       <span className="text-xs text-white font-medium">Feature on Homepage</span>
                     </label>
@@ -1388,7 +1388,7 @@ export const DeploymentsSection: React.FC = () => {
 
               {/* Section B: Descriptions & Media */}
               <div className="space-y-4">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold border-b border-white/5 pb-1">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold border-b border-white/5 pb-1">
                   2. Descriptions & Media
                 </h4>
 
@@ -1405,7 +1405,7 @@ export const DeploymentsSection: React.FC = () => {
                     value={shortDescription}
                     onChange={(e) => setShortDescription(e.target.value)}
                     placeholder="Concise overview shown on the product card..."
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                   />
                 </div>
 
@@ -1417,7 +1417,7 @@ export const DeploymentsSection: React.FC = () => {
                     value={fullDescription}
                     onChange={(e) => setFullDescription(e.target.value)}
                     placeholder="Comprehensive architectural overview, edge pipelines, and specifications..."
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                   />
                 </div>
 
@@ -1455,7 +1455,7 @@ export const DeploymentsSection: React.FC = () => {
                         value={thumbnailUrl}
                         onChange={(e) => setThumbnailUrl(e.target.value)}
                         placeholder="https://utfs.io/f/... or https://..."
-                        className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 font-mono focus:outline-none focus:border-[#a855f7]"
+                        className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 font-mono focus:outline-none focus:border-[#3B82F6]"
                       />
                     </div>
                     <div className="space-y-1">
@@ -1465,7 +1465,7 @@ export const DeploymentsSection: React.FC = () => {
                         value={coverImageUrl}
                         onChange={(e) => setCoverImageUrl(e.target.value)}
                         placeholder="https://utfs.io/f/... or https://..."
-                        className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 font-mono focus:outline-none focus:border-[#a855f7]"
+                        className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 font-mono focus:outline-none focus:border-[#3B82F6]"
                       />
                     </div>
                   </div>
@@ -1474,7 +1474,7 @@ export const DeploymentsSection: React.FC = () => {
 
               {/* Section C: Links */}
               <div className="space-y-4">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold border-b border-white/5 pb-1">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold border-b border-white/5 pb-1">
                   3. Links
                 </h4>
 
@@ -1486,7 +1486,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={demoUrl}
                       onChange={(e) => setDemoUrl(e.target.value)}
                       placeholder="https://example-demo.com"
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
@@ -1497,7 +1497,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={githubUrl}
                       onChange={(e) => setGithubUrl(e.target.value)}
                       placeholder="https://github.com/..."
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
@@ -1508,7 +1508,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={liveUrl}
                       onChange={(e) => setLiveUrl(e.target.value)}
                       placeholder="https://live-app.com"
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
                 </div>
@@ -1516,7 +1516,7 @@ export const DeploymentsSection: React.FC = () => {
 
               {/* Section D: Stats & Ratings */}
               <div className="space-y-4">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold border-b border-white/5 pb-1">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold border-b border-white/5 pb-1">
                   4. Stats & Ratings
                 </h4>
 
@@ -1530,7 +1530,7 @@ export const DeploymentsSection: React.FC = () => {
                       max="5"
                       value={rating}
                       onChange={(e) => setRating(Number(e.target.value))}
-                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#130728] border border-white/10 text-amber-300 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#171717] border border-white/10 text-amber-200 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
@@ -1541,7 +1541,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={usersCount}
                       onChange={(e) => setUsersCount(e.target.value)}
                       placeholder="14.2k+"
-                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#130728] border border-white/10 text-cyan-300 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#171717] border border-white/10 text-neutral-300 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
@@ -1552,7 +1552,7 @@ export const DeploymentsSection: React.FC = () => {
                       value={viewsCount}
                       onChange={(e) => setViewsCount(e.target.value)}
                       placeholder="98k"
-                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#130728] border border-white/10 text-slate-200 focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#171717] border border-white/10 text-slate-200 focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
                 </div>
@@ -1560,12 +1560,12 @@ export const DeploymentsSection: React.FC = () => {
 
               {/* Section E: Technical Metadata (Multi-chip inputs & key-value pairs) */}
               <div className="space-y-4">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold border-b border-white/5 pb-1">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold border-b border-white/5 pb-1">
                   5. Technical Metadata (Tags, Tech Stack, Features & Metrics)
                 </h4>
 
                 {/* Tags Array Builder */}
-                <div className="p-3.5 rounded-xl bg-[#130728]/70 border border-white/5 space-y-2">
+                <div className="p-3.5 rounded-xl bg-[#171717]/70 border border-white/5 space-y-2">
                   <label className="text-xs font-semibold text-slate-300 flex items-center justify-between">
                     <span>Tags (array of strings, e.g. ["React", "Tailwind", "Three.js"])</span>
                     <span className="text-[10px] text-slate-500">Press Enter to Add</span>
@@ -1582,12 +1582,12 @@ export const DeploymentsSection: React.FC = () => {
                         }
                       }}
                       placeholder="e.g. React, Tailwind, Three.js"
-                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#0e061e] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#111111] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <button
                       type="button"
                       onClick={handleAddTag}
-                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#a855f7]/20 text-[#c084fc] hover:bg-[#a855f7]/30 border border-[#a855f7]/40 cursor-pointer"
+                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#3B82F6]/20 text-[#A1A1A1] hover:bg-[#3B82F6]/30 border border-[#3B82F6]/40 cursor-pointer"
                     >
                       Add Tag
                     </button>
@@ -1596,13 +1596,13 @@ export const DeploymentsSection: React.FC = () => {
                     {tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono bg-[#1e0d3b] text-[#c084fc] border border-[#a855f7]/30"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono bg-[#171717] text-[#A1A1A1] border border-[#3B82F6]/30"
                       >
                         #{tag}
                         <button
                           type="button"
                           onClick={() => handleRemoveTag(tag)}
-                          className="text-slate-400 hover:text-rose-400 cursor-pointer"
+                          className="text-slate-400 hover:text-red-300 cursor-pointer"
                         >
                           <X className="w-3 h-3" />
                         </button>
@@ -1612,7 +1612,7 @@ export const DeploymentsSection: React.FC = () => {
                 </div>
 
                 {/* Tech Stack Array Builder */}
-                <div className="p-3.5 rounded-xl bg-[#130728]/70 border border-white/5 space-y-2">
+                <div className="p-3.5 rounded-xl bg-[#171717]/70 border border-white/5 space-y-2">
                   <label className="text-xs font-semibold text-slate-300 flex items-center justify-between">
                     <span>Tech Stack (array of strings, e.g. ["Next.js", "WebGL", "TypeScript"])</span>
                     <span className="text-[10px] text-slate-500">Press Enter to Add</span>
@@ -1629,12 +1629,12 @@ export const DeploymentsSection: React.FC = () => {
                         }
                       }}
                       placeholder="e.g. Next.js 15, WebGL, TypeScript, Prisma"
-                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#0e061e] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#111111] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <button
                       type="button"
                       onClick={handleAddTech}
-                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#06b6d4]/20 text-[#22d3ee] hover:bg-[#06b6d4]/30 border border-[#06b6d4]/40 cursor-pointer"
+                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#A1A1A1]/20 text-[#A1A1A1] hover:bg-[#A1A1A1]/30 border border-[#A1A1A1]/40 cursor-pointer"
                     >
                       Add Stack
                     </button>
@@ -1643,13 +1643,13 @@ export const DeploymentsSection: React.FC = () => {
                     {techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono bg-[#0c2438] text-[#22d3ee] border border-[#06b6d4]/30"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono bg-[#0c2438] text-[#A1A1A1] border border-[#A1A1A1]/30"
                       >
                         {tech}
                         <button
                           type="button"
                           onClick={() => handleRemoveTech(tech)}
-                          className="text-slate-400 hover:text-rose-400 cursor-pointer"
+                          className="text-slate-400 hover:text-red-300 cursor-pointer"
                         >
                           <X className="w-3 h-3" />
                         </button>
@@ -1659,7 +1659,7 @@ export const DeploymentsSection: React.FC = () => {
                 </div>
 
                 {/* Features Array (Bullet points for detail modal) */}
-                <div className="p-3.5 rounded-xl bg-[#130728]/70 border border-white/5 space-y-2">
+                <div className="p-3.5 rounded-xl bg-[#171717]/70 border border-white/5 space-y-2">
                   <label className="text-xs font-semibold text-slate-300 flex items-center justify-between">
                     <span>Features (array of strings, bullet points for detail modal)</span>
                     <span className="text-[10px] text-slate-500">Press Enter to Add</span>
@@ -1676,12 +1676,12 @@ export const DeploymentsSection: React.FC = () => {
                         }
                       }}
                       placeholder="e.g. Sub-10ms real-time telemetry streaming"
-                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#0e061e] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-[#111111] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <button
                       type="button"
                       onClick={handleAddFeature}
-                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 border border-emerald-500/40 cursor-pointer"
+                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-green-500/20 text-green-300 hover:bg-green-500/30 border border-green-500/40 cursor-pointer"
                     >
                       Add Feature
                     </button>
@@ -1690,16 +1690,16 @@ export const DeploymentsSection: React.FC = () => {
                     {features.map((feat, fIdx) => (
                       <div
                         key={fIdx}
-                        className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-[#0e061e] border border-white/5 text-xs text-slate-200"
+                        className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-[#111111] border border-white/5 text-xs text-slate-200"
                       >
                         <div className="flex items-center gap-2">
-                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-green-300 shrink-0" />
                           <span>{feat}</span>
                         </div>
                         <button
                           type="button"
                           onClick={() => handleRemoveFeature(feat)}
-                          className="text-slate-400 hover:text-rose-400 cursor-pointer"
+                          className="text-slate-400 hover:text-red-300 cursor-pointer"
                         >
                           <X className="w-3.5 h-3.5" />
                         </button>
@@ -1709,7 +1709,7 @@ export const DeploymentsSection: React.FC = () => {
                 </div>
 
                 {/* Technical Metrics Key-Value Pair Builder */}
-                <div className="p-3.5 rounded-xl bg-[#130728]/70 border border-white/5 space-y-2">
+                <div className="p-3.5 rounded-xl bg-[#171717]/70 border border-white/5 space-y-2">
                   <label className="text-xs font-semibold text-slate-300 flex items-center justify-between">
                     <span>Technical Metrics (array of &#123; label: string, value: string &#125;)</span>
                     <span className="text-[10px] text-slate-500">e.g. Bundle Size: 42kb, FPS: 60 FPS</span>
@@ -1720,19 +1720,19 @@ export const DeploymentsSection: React.FC = () => {
                       value={newMetricLabel}
                       onChange={(e) => setNewMetricLabel(e.target.value)}
                       placeholder="Label (e.g. Bundle Size)"
-                      className="sm:col-span-2 px-3 py-1.5 text-xs rounded-lg bg-[#0e061e] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="sm:col-span-2 px-3 py-1.5 text-xs rounded-lg bg-[#111111] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <input
                       type="text"
                       value={newMetricValue}
                       onChange={(e) => setNewMetricValue(e.target.value)}
                       placeholder="Value (e.g. 42kb)"
-                      className="sm:col-span-2 px-3 py-1.5 text-xs rounded-lg bg-[#0e061e] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                      className="sm:col-span-2 px-3 py-1.5 text-xs rounded-lg bg-[#111111] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                     />
                     <button
                       type="button"
                       onClick={handleAddTechnicalMetric}
-                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-purple-500/20 text-purple-200 hover:bg-purple-500/30 border border-purple-500/40 cursor-pointer"
+                      className="px-3 py-1.5 text-xs font-bold rounded-lg bg-neutral-800/20 text-neutral-300 hover:bg-neutral-800/30 border border-neutral-700/40 cursor-pointer"
                     >
                       Add Metric
                     </button>
@@ -1741,16 +1741,16 @@ export const DeploymentsSection: React.FC = () => {
                     {technicalMetrics.map((tm, tmIdx) => (
                       <div
                         key={tmIdx}
-                        className="flex items-center justify-between p-2 rounded-lg bg-[#0e061e] border border-white/5 font-mono text-xs"
+                        className="flex items-center justify-between p-2 rounded-lg bg-[#111111] border border-white/5 font-mono text-xs"
                       >
                         <div className="flex flex-col">
                           <span className="text-[10px] text-slate-400">{tm.label}</span>
-                          <span className="font-bold text-cyan-300">{tm.value}</span>
+                          <span className="font-bold text-neutral-300">{tm.value}</span>
                         </div>
                         <button
                           type="button"
                           onClick={() => handleRemoveTechnicalMetric(tmIdx)}
-                          className="text-slate-400 hover:text-rose-400 cursor-pointer"
+                          className="text-slate-400 hover:text-red-300 cursor-pointer"
                         >
                           <X className="w-3.5 h-3.5" />
                         </button>
@@ -1761,7 +1761,7 @@ export const DeploymentsSection: React.FC = () => {
               </div>
 
               {/* Section F: Publishing & Status */}
-              <div className="p-4 rounded-xl bg-[#130728] border border-white/10 space-y-3">
+              <div className="p-4 rounded-xl bg-[#171717] border border-white/10 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
                     <label className="text-xs font-semibold text-slate-300">Deployment Status</label>
@@ -1780,20 +1780,20 @@ export const DeploymentsSection: React.FC = () => {
                       min={1}
                       value={displayOrder}
                       onChange={(e) => setDisplayOrder(Number(e.target.value))}
-                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#0e061e] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-[#111111] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                     />
                   </div>
 
                   <div className="space-y-1.5 flex flex-col justify-center">
                     <label className="text-xs font-semibold text-slate-300">Publish State</label>
-                    <label className="flex items-center gap-2 p-2 rounded-xl bg-[#0e061e] border border-white/10 cursor-pointer">
+                    <label className="flex items-center gap-2 p-2 rounded-xl bg-[#111111] border border-white/10 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={isPublished}
                         onChange={(e) => setIsPublished(e.target.checked)}
-                        className="w-4 h-4 rounded text-emerald-400 bg-[#0e061e] border-white/20 focus:ring-0 cursor-pointer"
+                        className="w-4 h-4 rounded text-green-300 bg-[#111111] border-white/20 focus:ring-0 cursor-pointer"
                       />
-                      <span className="text-xs text-emerald-300 font-medium">Published to Live Site</span>
+                      <span className="text-xs text-green-300 font-medium">Published to Live Site</span>
                     </label>
                   </div>
                 </div>
@@ -1813,7 +1813,7 @@ export const DeploymentsSection: React.FC = () => {
                   type="submit"
                   variant="primary"
                   size="md"
-                  icon={<Sparkles className="w-4 h-4 text-purple-200" />}
+                  icon={<Sparkles className="w-4 h-4 text-neutral-300" />}
                 >
                   {editingDepId ? 'Save & Sync Deployment' : 'Create & Sync Deployment'}
                 </CyberButton>

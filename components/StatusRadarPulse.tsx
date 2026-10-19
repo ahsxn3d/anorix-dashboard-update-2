@@ -19,11 +19,11 @@ export const StatusRadarPulse: React.FC<StatusRadarPulseProps> = ({
   size = 'md',
 }) => {
   const colorMap = {
-    OPTIMAL: { bg: 'bg-emerald-500', glow: 'rgba(16, 185, 129, 0.5)', text: 'text-emerald-400', border: 'border-emerald-500/30' },
-    LIVE: { bg: 'bg-emerald-500', glow: 'rgba(16, 185, 129, 0.5)', text: 'text-emerald-400', border: 'border-emerald-500/30' },
-    SYNCING: { bg: 'bg-cyan-500', glow: 'rgba(6, 182, 212, 0.5)', text: 'text-cyan-400', border: 'border-cyan-500/30' },
-    DEGRADED: { bg: 'bg-amber-500', glow: 'rgba(245, 158, 11, 0.5)', text: 'text-amber-400', border: 'border-amber-500/30' },
-    MAINTENANCE: { bg: 'bg-rose-500', glow: 'rgba(244, 63, 94, 0.5)', text: 'text-rose-400', border: 'border-rose-500/30' },
+    OPTIMAL: { bg: 'bg-[var(--ok-fg)]', glow: 'transparent', text: 'text-[var(--ok-fg)]', border: 'border-[var(--ok-border)]' },
+    LIVE: { bg: 'bg-[var(--ok-fg)]', glow: 'transparent', text: 'text-[var(--ok-fg)]', border: 'border-[var(--ok-border)]' },
+    SYNCING: { bg: 'bg-[var(--warn-fg)]', glow: 'transparent', text: 'text-[var(--warn-fg)]', border: 'border-[var(--warn-border)]' },
+    DEGRADED: { bg: 'bg-[var(--err-fg)]', glow: 'transparent', text: 'text-[var(--err-fg)]', border: 'border-[var(--err-border)]' },
+    MAINTENANCE: { bg: 'bg-[var(--neu-fg)]', glow: 'transparent', text: 'text-[var(--neu-fg)]', border: 'border-[var(--neu-border)]' },
   };
 
   const current = colorMap[status] || colorMap.OPTIMAL;
@@ -36,14 +36,13 @@ export const StatusRadarPulse: React.FC<StatusRadarPulseProps> = ({
 
   return (
     <div
-      className={`inline-flex items-center rounded-full bg-[#0D041A] border border-purple-500/20 shadow-sm ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center rounded-full bg-transparent border border-[#232323] ${sizeClasses[size]} ${className}`}
     >
       {/* Concentric Radar Rings */}
       <div className="relative flex items-center justify-center w-3 h-3 shrink-0">
         <motion.span
-          animate={{ scale: [1, 2.2, 1], opacity: [0.8, 0, 0.8] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className={`absolute w-full h-full rounded-full ${current.bg} opacity-75`}
+          animate={{ opacity: 1 }}
+          className={`absolute w-full h-full rounded-full ${current.bg} opacity-0`}
         />
         <span
           className={`relative w-2 h-2 rounded-full ${current.bg}`}

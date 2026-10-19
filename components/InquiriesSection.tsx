@@ -74,92 +74,92 @@ const STATUS_COLUMNS: StatusColumnDef[] = [
   {
     id: 'NEW',
     label: 'New Intake',
-    dotColor: 'bg-cyan-400 shadow-[0_0_10px_#22d3ee]',
-    headerBg: 'bg-gradient-to-r from-cyan-950/80 via-[#0a2133]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-cyan-500/30',
-    accentBorderTop: 'border-t-2 border-t-cyan-400',
-    titleColor: 'text-cyan-100',
-    badgeBg: 'bg-cyan-400/20',
-    badgeText: 'text-cyan-300',
-    badgeBorder: 'border-cyan-400/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(6,182,212,0.3)]',
-    columnGlow: 'rgba(6,182,212,0.25)',
-    columnBorder: 'border-cyan-500/20'
+    dotColor: 'bg-[var(--info-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--info-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--info-bg)]',
+    badgeText: 'text-[var(--info-fg)]',
+    badgeBorder: 'border-[var(--info-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   },
   {
     id: 'QUALIFYING',
     label: 'Qualifying Brief',
-    dotColor: 'bg-amber-400 shadow-[0_0_10px_#fbbf24]',
-    headerBg: 'bg-gradient-to-r from-amber-950/80 via-[#2e1d08]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-amber-500/30',
-    accentBorderTop: 'border-t-2 border-t-amber-400',
-    titleColor: 'text-amber-100',
-    badgeBg: 'bg-amber-400/20',
-    badgeText: 'text-amber-300',
-    badgeBorder: 'border-amber-400/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(245,158,11,0.3)]',
-    columnGlow: 'rgba(245,158,11,0.25)',
-    columnBorder: 'border-amber-500/20'
+    dotColor: 'bg-[var(--warn-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--warn-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--warn-bg)]',
+    badgeText: 'text-[var(--warn-fg)]',
+    badgeBorder: 'border-[var(--warn-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   },
   {
     id: 'PROPOSAL_SENT',
     label: 'Proposal Sent',
-    dotColor: 'bg-[#c084fc] shadow-[0_0_10px_#c084fc]',
-    headerBg: 'bg-gradient-to-r from-purple-950/80 via-[#220c3a]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-purple-500/30',
-    accentBorderTop: 'border-t-2 border-t-[#c084fc]',
-    titleColor: 'text-purple-100',
-    badgeBg: 'bg-[#a855f7]/25',
-    badgeText: 'text-purple-200',
-    badgeBorder: 'border-[#c084fc]/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(168,85,247,0.3)]',
-    columnGlow: 'rgba(168,85,247,0.25)',
-    columnBorder: 'border-purple-500/20'
+    dotColor: 'bg-[var(--info-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--info-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--info-bg)]',
+    badgeText: 'text-[var(--info-fg)]',
+    badgeBorder: 'border-[var(--info-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   },
   {
     id: 'IN_NEGOTIATION',
     label: 'In Negotiation',
-    dotColor: 'bg-emerald-400 shadow-[0_0_10px_#34d399]',
-    headerBg: 'bg-gradient-to-r from-emerald-950/80 via-[#07291a]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-emerald-500/30',
-    accentBorderTop: 'border-t-2 border-t-emerald-400',
-    titleColor: 'text-emerald-100',
-    badgeBg: 'bg-emerald-400/20',
-    badgeText: 'text-emerald-300',
-    badgeBorder: 'border-emerald-400/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(16,185,129,0.3)]',
-    columnGlow: 'rgba(16,185,129,0.25)',
-    columnBorder: 'border-emerald-500/20'
+    dotColor: 'bg-[var(--info-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--info-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--info-bg)]',
+    badgeText: 'text-[var(--info-fg)]',
+    badgeBorder: 'border-[var(--info-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   },
   {
     id: 'WON',
     label: 'Won & Active',
-    dotColor: 'bg-blue-400 shadow-[0_0_10px_#60a5fa]',
-    headerBg: 'bg-gradient-to-r from-blue-950/80 via-[#091b3e]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-blue-500/30',
-    accentBorderTop: 'border-t-2 border-t-blue-400',
-    titleColor: 'text-blue-100',
-    badgeBg: 'bg-blue-400/20',
-    badgeText: 'text-blue-300',
-    badgeBorder: 'border-blue-400/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(59,130,246,0.3)]',
-    columnGlow: 'rgba(59,130,246,0.25)',
-    columnBorder: 'border-blue-500/20'
+    dotColor: 'bg-[var(--ok-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--ok-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--ok-bg)]',
+    badgeText: 'text-[var(--ok-fg)]',
+    badgeBorder: 'border-[var(--ok-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   },
   {
     id: 'LOST',
     label: 'Closed / Lost',
-    dotColor: 'bg-rose-400 shadow-[0_0_10px_#fb7185]',
-    headerBg: 'bg-gradient-to-r from-rose-950/80 via-[#2d0915]/90 to-[#0e0720]',
-    headerBorder: 'border-b border-rose-500/30',
-    accentBorderTop: 'border-t-2 border-t-rose-400',
-    titleColor: 'text-rose-100',
-    badgeBg: 'bg-rose-400/20',
-    badgeText: 'text-rose-300',
-    badgeBorder: 'border-rose-400/40',
-    badgeGlow: 'shadow-[0_0_10px_rgba(244,63,94,0.3)]',
-    columnGlow: 'rgba(244,63,94,0.25)',
-    columnBorder: 'border-rose-500/20'
+    dotColor: 'bg-[var(--neu-fg)]',
+    headerBg: 'bg-[#111111]',
+    headerBorder: 'border-b border-[#232323]',
+    accentBorderTop: 'border-t-2 border-t-[var(--neu-border)]',
+    titleColor: 'text-[#EDEDED]',
+    badgeBg: 'bg-[var(--neu-bg)]',
+    badgeText: 'text-[var(--neu-fg)]',
+    badgeBorder: 'border-[var(--neu-border)]',
+    badgeGlow: '',
+    columnGlow: 'transparent',
+    columnBorder: 'border-[#232323]'
   }
 ];
 
@@ -412,19 +412,19 @@ export const InquiriesSection: React.FC = () => {
     <div className="space-y-6">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#130728] border border-[#a855f7]/50 text-white shadow-2xl shadow-[#a855f7]/30 text-sm font-medium animate-in fade-in slide-in-from-bottom-5">
-          <Sparkles className="w-4 h-4 text-[#a855f7] animate-pulse" />
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#171717] border border-[#3B82F6]/50 text-white shadow-2xl shadow-[#3B82F6]/30 text-sm font-medium animate-in fade-in slide-in-from-bottom-5">
+          <Sparkles className="w-4 h-4 text-[#3B82F6] animate-pulse" />
           <span>{toastMessage}</span>
         </div>
       )}
 
       {/* Section Title Header */}
-      <div className="p-5 rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-xl backdrop-blur-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-5 rounded-2xl bg-[#111111]/90 border border-white/10 shadow-xl backdrop-blur-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <MessageSquare className="w-5 h-5 text-[#a855f7]" />
+            <MessageSquare className="w-5 h-5 text-[#3B82F6]" />
             <KineticTitle text="INQUiRiES & ESCROW PiPELiNE" size="sm" />
-            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-neutral-800/20 text-neutral-300 border border-neutral-700/30">
               Live Intake
             </span>
           </div>
@@ -436,12 +436,12 @@ export const InquiriesSection: React.FC = () => {
 
       {/* Top Metrics Row with DashboardHoloCards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
-        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(56, 189, 248, 0.35)">
+        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(161, 161, 161, 0.35)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-neutral-300">
               <CyberScrambleText text="Total Submissions" scrambleSpeed={25} />
             </span>
-            <MessageSquare className="w-4 h-4 text-cyan-400" />
+            <MessageSquare className="w-4 h-4 text-neutral-300" />
           </div>
           <div className="mt-2 text-2xl font-black text-white font-mono">
             <CyberScrambleText text={String(totalSubmissions)} scrambleSpeed={25} />
@@ -451,12 +451,12 @@ export const InquiriesSection: React.FC = () => {
 
         <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(245, 158, 11, 0.35)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-amber-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-amber-200">
               <CyberScrambleText text="Fresh Briefs (Unread)" scrambleSpeed={25} />
             </span>
-            <Flame className="w-4 h-4 text-amber-400" />
+            <Flame className="w-4 h-4 text-amber-200" />
           </div>
-          <div className="mt-2 text-2xl font-black text-amber-400 font-mono">
+          <div className="mt-2 text-2xl font-black text-amber-200 font-mono">
             <CyberScrambleText text={String(unreadCount)} scrambleSpeed={25} />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Needs architectural triage</p>
@@ -464,25 +464,25 @@ export const InquiriesSection: React.FC = () => {
 
         <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(16, 185, 129, 0.35)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-green-300">
               <CyberScrambleText text="Active Escrow Sprints" scrambleSpeed={25} />
             </span>
-            <Zap className="w-4 h-4 text-emerald-400" />
+            <Zap className="w-4 h-4 text-green-300" />
           </div>
-          <div className="mt-2 text-2xl font-black text-emerald-400 font-mono">
+          <div className="mt-2 text-2xl font-black text-green-300 font-mono">
             <CyberScrambleText text={String(activeMilestones)} scrambleSpeed={25} />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Milestone deployment phase</p>
         </DashboardHoloCard>
 
-        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(139, 0, 238, 0.35)">
+        <DashboardHoloCard className="p-0 shadow-lg relative overflow-hidden" glowColor="rgba(59, 130, 246, 0.35)">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#a855f7]">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#3B82F6]">
               <CyberScrambleText text="Approved Reviews" scrambleSpeed={25} />
             </span>
-            <Star className="w-4 h-4 text-[#a855f7]" />
+            <Star className="w-4 h-4 text-[#3B82F6]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#c084fc] font-mono">
+          <div className="mt-2 text-2xl font-black text-[#A1A1A1] font-mono">
             <CyberScrambleText text={String(reviews.filter((r) => r.isApproved).length)} scrambleSpeed={25} />
           </div>
           <p className="text-[11px] text-slate-400 mt-1">Public showcase testimonials</p>
@@ -490,10 +490,10 @@ export const InquiriesSection: React.FC = () => {
       </div>
 
       {/* Console Tab Switcher & Search Bar */}
-      <div className="p-4 rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-xl backdrop-blur-xl space-y-4">
+      <div className="p-4 rounded-2xl bg-[#111111]/90 border border-white/10 shadow-xl backdrop-blur-xl space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           {/* Tabs */}
-          <div className="flex items-center p-1 rounded-xl bg-[#130728] border border-white/10 w-fit">
+          <div className="flex items-center p-1 rounded-xl bg-[#171717] border border-white/10 w-fit">
             <button
               onClick={() => {
                 sound.playHoverTick();
@@ -501,7 +501,7 @@ export const InquiriesSection: React.FC = () => {
               }}
               className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeConsoleTab === 'KANBAN'
-                  ? 'bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#3B82F6] to-[#3B82F6] text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -516,7 +516,7 @@ export const InquiriesSection: React.FC = () => {
               }}
               className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeConsoleTab === 'TABLE'
-                  ? 'bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#3B82F6] to-[#3B82F6] text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -531,7 +531,7 @@ export const InquiriesSection: React.FC = () => {
               }}
               className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeConsoleTab === 'REVIEWS'
-                  ? 'bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#3B82F6] to-[#3B82F6] text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -575,7 +575,7 @@ export const InquiriesSection: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by client name, email, company or brief contents..."
-                className="w-full pl-8 pr-4 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                className="w-full pl-8 pr-4 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
               />
             </div>
 
@@ -584,7 +584,7 @@ export const InquiriesSection: React.FC = () => {
               <select
                 value={budgetTierFilter}
                 onChange={(e) => setBudgetTierFilter(e.target.value)}
-                className="px-3 py-1.5 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                className="px-3 py-1.5 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
               >
                 <option value="ALL">All Budget Tiers</option>
                 <option value="$1k - $3k (Micro Deployment)">$1k - $3k (Micro Deployment)</option>
@@ -617,7 +617,7 @@ export const InquiriesSection: React.FC = () => {
                   col.accentBorderTop
                 } ${
                   isColumnHovered
-                    ? 'border-[#a855f7] ring-2 ring-[#a855f7]/50 bg-[#14082c] shadow-[0_0_28px_rgba(168,85,247,0.3)]'
+                    ? 'border-[#3B82F6] ring-2 ring-[#3B82F6]/50 bg-[#14082c] shadow-[0_0_28px_rgba(59, 130, 246,0.3)]'
                     : `${col.columnBorder} shadow-xl shadow-black/60`
                 }`}
               >
@@ -641,12 +641,12 @@ export const InquiriesSection: React.FC = () => {
                 {/* Card Stream with safe scroll padding preventing cutoffs */}
                 <div className="p-3 pb-8 space-y-3 flex-1 overflow-y-auto max-h-[640px]">
                   {columnSubs.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center p-6 text-center space-y-2.5 rounded-2xl bg-[#0a0514]/60 border border-dashed border-white/10 my-auto min-h-[160px]">
+                    <div className="flex flex-col items-center justify-center p-6 text-center space-y-2.5 rounded-2xl bg-[#0A0A0A]/60 border border-dashed border-white/10 my-auto min-h-[160px]">
                       <div className="relative w-8 h-8 flex items-center justify-center">
-                        <div className="absolute inset-0 rounded-full bg-purple-500/20 animate-ping" />
-                        <div className="w-3 h-3 rounded-full bg-purple-400" />
+                        <div className="absolute inset-0 rounded-full bg-neutral-800/20 animate-ping" />
+                        <div className="w-3 h-3 rounded-full bg-neutral-800" />
                       </div>
-                      <p className="text-[11px] font-mono text-purple-300/70 max-w-[200px] leading-relaxed">
+                      <p className="text-[11px] font-mono text-neutral-300/70 max-w-[200px] leading-relaxed">
                         No active transmissions in this lane. Waiting for incoming project briefs...
                       </p>
                     </div>
@@ -688,10 +688,10 @@ export const InquiriesSection: React.FC = () => {
 
       {/* VIEW 2: SUBMISSIONS TABLE */}
       {activeConsoleTab === 'TABLE' && (
-        <div className="rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
+        <div className="rounded-2xl bg-[#111111]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-[#130728]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
+              <thead className="bg-[#171717]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
                 <tr>
                   <th className="py-3.5 px-4">Client / Brand</th>
                   <th className="py-3.5 px-4">Budget Tier</th>
@@ -718,7 +718,7 @@ export const InquiriesSection: React.FC = () => {
                         </div>
                       </td>
                       <td className="py-3 px-4 whitespace-nowrap">
-                        <span className="px-2 py-0.5 rounded font-mono text-[10px] font-semibold bg-[#a855f7]/15 text-[#c084fc] border border-[#a855f7]/30">
+                        <span className="px-2 py-0.5 rounded font-mono text-[10px] font-semibold bg-[#3B82F6]/15 text-[#A1A1A1] border border-[#3B82F6]/30">
                           {sub.budgetTier}
                         </span>
                       </td>
@@ -732,7 +732,7 @@ export const InquiriesSection: React.FC = () => {
                         <select
                           value={sub.status}
                           onChange={(e) => handleUpdateStatus(sub.id, e.target.value as SubmissionStatus)}
-                          className="px-2 py-1 text-[10px] font-mono font-bold rounded-lg bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                          className="px-2 py-1 text-[10px] font-mono font-bold rounded-lg bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                         >
                           {STATUS_COLUMNS.map((c) => (
                             <option key={c.id} value={c.id}>
@@ -745,14 +745,14 @@ export const InquiriesSection: React.FC = () => {
                         <div className="flex items-center justify-end gap-1.5">
                           <button
                             onClick={() => setSelectedSubmission(sub)}
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-[#a855f7]/20 hover:text-[#c084fc] border border-white/10 text-slate-300"
+                            className="p-1.5 rounded-lg bg-white/5 hover:bg-[#3B82F6]/20 hover:text-[#A1A1A1] border border-white/10 text-slate-300"
                             title="View Brief Details"
                           >
                             <Eye className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => handleDeleteSubmission(sub.id)}
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 hover:text-rose-400 border border-white/10 text-slate-400"
+                            className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-300 border border-white/10 text-slate-400"
                             title="Delete Submission"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -771,10 +771,10 @@ export const InquiriesSection: React.FC = () => {
       {/* VIEW 3: REVIEWS MODERATION */}
       {activeConsoleTab === 'REVIEWS' && (
         <div className="space-y-4">
-          <div className="rounded-2xl bg-[#0d061e]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
+          <div className="rounded-2xl bg-[#111111]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-300">
-                <thead className="bg-[#130728]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
+                <thead className="bg-[#171717]/90 text-[11px] font-mono uppercase tracking-wider text-slate-400 border-b border-white/10">
                   <tr>
                     <th className="py-3.5 px-4">Author / Company</th>
                     <th className="py-3.5 px-4">Rating</th>
@@ -802,7 +802,7 @@ export const InquiriesSection: React.FC = () => {
                           <div className="text-[10px] font-mono text-slate-500">{rev.email}</div>
                         </td>
                         <td className="py-3 px-4 whitespace-nowrap">
-                          <div className="flex items-center gap-1 text-amber-400">
+                          <div className="flex items-center gap-1 text-amber-200">
                             {Array.from({ length: rev.rating }).map((_, i) => (
                               <Star key={i} className="w-3 h-3 fill-current" />
                             ))}
@@ -816,7 +816,7 @@ export const InquiriesSection: React.FC = () => {
                         </td>
                         <td className="py-3 px-4 text-center">
                           {rev.isVerified ? (
-                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-800/10 text-neutral-300 border border-neutral-700/20">
                               <ShieldCheck className="w-3 h-3" />
                               <span>Verified</span>
                             </span>
@@ -829,7 +829,7 @@ export const InquiriesSection: React.FC = () => {
                             onClick={() => handleToggleReviewFeatured(rev)}
                             className={`px-3 py-1 rounded-full text-[10px] font-bold font-mono uppercase tracking-wider transition-all cursor-pointer ${
                               rev.isFeatured
-                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30'
+                                ? 'bg-amber-500/20 text-amber-200 border border-amber-500/40 hover:bg-amber-500/30'
                                 : 'bg-slate-800 text-slate-400 border border-white/10 hover:bg-slate-700'
                             }`}
                           >
@@ -841,7 +841,7 @@ export const InquiriesSection: React.FC = () => {
                             onClick={() => handleToggleReviewApproval(rev)}
                             className={`px-3 py-1 rounded-full text-[10px] font-bold font-mono uppercase tracking-wider transition-all cursor-pointer ${
                               rev.isApproved
-                                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30'
+                                ? 'bg-green-500/20 text-green-300 border border-green-500/40 hover:bg-green-500/30'
                                 : 'bg-slate-800 text-slate-400 border border-white/10 hover:bg-slate-700'
                             }`}
                           >
@@ -851,7 +851,7 @@ export const InquiriesSection: React.FC = () => {
                         <td className="py-3 px-4 text-right whitespace-nowrap">
                           <button
                             onClick={() => handleDeleteReview(rev.id)}
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 hover:text-rose-400 border border-white/10 text-slate-400"
+                            className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-300 border border-white/10 text-slate-400"
                             title="Delete Review"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -870,17 +870,17 @@ export const InquiriesSection: React.FC = () => {
       {/* Submission Detail Drawer Modal */}
       {selectedSubmission && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl rounded-2xl bg-[#0e061e] border border-white/15 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-2xl rounded-2xl bg-[#111111] border border-white/15 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Modal Header */}
-            <div className="p-5 bg-[#130728] border-b border-white/10 flex items-center justify-between">
+            <div className="p-5 bg-[#171717] border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                <div className="p-2 rounded-xl bg-neutral-800/20 text-neutral-300 border border-neutral-700/30">
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">{selectedSubmission.clientName}</h3>
                   <p className="text-xs text-slate-400 font-mono">
-                    Prisma ContactSubmission: <code className="text-[#a855f7]">{selectedSubmission.id}</code>
+                    Prisma ContactSubmission: <code className="text-[#3B82F6]">{selectedSubmission.id}</code>
                   </p>
                 </div>
               </div>
@@ -895,12 +895,12 @@ export const InquiriesSection: React.FC = () => {
 
             {/* Modal Body */}
             <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
-              <div className="grid grid-cols-2 gap-4 p-4 rounded-xl bg-[#130728]/70 border border-white/5 text-xs">
+              <div className="grid grid-cols-2 gap-4 p-4 rounded-xl bg-[#171717]/70 border border-white/5 text-xs">
                 <div>
                   <span className="text-slate-500 block">Direct Email:</span>
                   <a
                     href={`mailto:${selectedSubmission.email}`}
-                    className="font-mono text-cyan-400 hover:underline flex items-center gap-1 mt-0.5"
+                    className="font-mono text-neutral-300 hover:underline flex items-center gap-1 mt-0.5"
                   >
                     <Mail className="w-3 h-3" />
                     <span>{selectedSubmission.email}</span>
@@ -914,7 +914,7 @@ export const InquiriesSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-slate-500 block">Budget Allocation:</span>
-                  <span className="font-mono text-[#c084fc] font-bold mt-0.5 block">
+                  <span className="font-mono text-[#A1A1A1] font-bold mt-0.5 block">
                     {selectedSubmission.budgetTier}
                   </span>
                 </div>
@@ -926,19 +926,19 @@ export const InquiriesSection: React.FC = () => {
 
               <div>
                 <label className="text-xs font-semibold text-slate-300 block mb-1.5">Project Scope Brief</label>
-                <div className="p-4 rounded-xl bg-[#130728] border border-white/10 text-xs text-slate-200 leading-relaxed font-sans">
+                <div className="p-4 rounded-xl bg-[#171717] border border-white/10 text-xs text-slate-200 leading-relaxed font-sans">
                   {selectedSubmission.projectBrief}
                 </div>
               </div>
 
               {/* Status Selector & Quick Transitions */}
-              <div className="p-4 rounded-xl bg-[#130728] border border-white/10 space-y-3">
+              <div className="p-4 rounded-xl bg-[#171717] border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <label className="text-xs font-semibold text-slate-300">Kanban Status Pipeline</label>
                   <select
                     value={selectedSubmission.status}
                     onChange={(e) => handleUpdateStatus(selectedSubmission.id, e.target.value as SubmissionStatus)}
-                    className="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-[#0e061e] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                    className="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-[#111111] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                   >
                     {STATUS_COLUMNS.map((c) => (
                       <option key={c.id} value={c.id}>
@@ -975,14 +975,14 @@ export const InquiriesSection: React.FC = () => {
                   defaultValue={selectedSubmission.internalNotes || ''}
                   onBlur={(e) => handleSaveNotes(e.target.value)}
                   placeholder="Add private technical notes, estimated sprint effort, or NDA status..."
-                  className="w-full p-3 text-xs rounded-xl bg-[#130728] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#a855f7]"
+                  className="w-full p-3 text-xs rounded-xl bg-[#171717] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-[#3B82F6]"
                 />
                 <p className="text-[10px] text-slate-500 mt-1">Changes save automatically on blur.</p>
               </div>
             </div>
 
             {/* Modal Actions */}
-            <div className="p-4 bg-[#130728] border-t border-white/10 flex items-center justify-between">
+            <div className="p-4 bg-[#171717] border-t border-white/10 flex items-center justify-between">
               <CyberButton
                 variant="danger"
                 size="sm"
@@ -1012,10 +1012,10 @@ export const InquiriesSection: React.FC = () => {
       {/* Add Review Modal */}
       {isReviewModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-lg rounded-2xl bg-[#0e061e] border border-white/15 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            <div className="p-5 bg-[#130728] border-b border-white/10 flex items-center justify-between">
+          <div className="relative w-full max-w-lg rounded-2xl bg-[#111111] border border-white/15 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div className="p-5 bg-[#171717] border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+                <Star className="w-5 h-5 text-amber-200 fill-amber-400" />
                 <h3 className="text-base font-bold text-white">Add Client Review Item</h3>
               </div>
               <button
@@ -1036,7 +1036,7 @@ export const InquiriesSection: React.FC = () => {
                     value={reviewName}
                     onChange={(e) => setReviewName(e.target.value)}
                     placeholder="e.g. Marcus Sterling"
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                   />
                 </div>
                 <div className="space-y-1">
@@ -1046,7 +1046,7 @@ export const InquiriesSection: React.FC = () => {
                     value={reviewRoleCompany}
                     onChange={(e) => setReviewRoleCompany(e.target.value)}
                     placeholder="e.g. Managing Partner, Sterling Capital"
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                   />
                 </div>
               </div>
@@ -1059,7 +1059,7 @@ export const InquiriesSection: React.FC = () => {
                     value={reviewEmail}
                     onChange={(e) => setReviewEmail(e.target.value)}
                     placeholder="client@example.com"
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                   />
                 </div>
                 <div className="space-y-1">
@@ -1067,7 +1067,7 @@ export const InquiriesSection: React.FC = () => {
                   <select
                     value={reviewRating}
                     onChange={(e) => setReviewRating(Number(e.target.value))}
-                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                   >
                     <option value={5}>5 Stars (Exceptional)</option>
                     <option value={4}>4 Stars (Very Good)</option>
@@ -1084,7 +1084,7 @@ export const InquiriesSection: React.FC = () => {
                   value={reviewComment}
                   onChange={(e) => setReviewComment(e.target.value)}
                   placeholder="Describe the architectural outcome, speed, and feedback..."
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-[#130728] border border-white/10 text-white focus:outline-none focus:border-[#a855f7]"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-[#171717] border border-white/10 text-white focus:outline-none focus:border-[#3B82F6]"
                 />
               </div>
 
@@ -1101,7 +1101,7 @@ export const InquiriesSection: React.FC = () => {
                   type="submit"
                   variant="primary"
                   size="md"
-                  icon={<Star className="w-4 h-4 text-amber-300" />}
+                  icon={<Star className="w-4 h-4 text-amber-200" />}
                 >
                   Publish Client Review
                 </CyberButton>

@@ -80,22 +80,20 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md bg-[#0d061e]/95 rounded-3xl border border-[#a855f7]/40 p-6 shadow-[0_0_50px_rgba(168,85,247,0.3)] space-y-6 overflow-hidden">
-        {/* Top Glowing Ambient Light */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-2 bg-gradient-to-r from-transparent via-[#a855f7] to-transparent blur-sm" />
+      <div className="relative w-full max-w-md bg-[#0a0a0a] rounded-3xl border border-white/15 p-6 space-y-6 overflow-hidden">
 
         {/* Close Button */}
         <button
           onClick={onClose}
           disabled={isAuthenticating}
-          className="absolute top-4 right-4 p-2 rounded-xl bg-[#130728] text-[#a393eb] hover:text-white border border-white/10 transition-all cursor-pointer disabled:opacity-50"
+          className="absolute top-4 right-4 p-2 rounded-full text-white/50 hover:text-white border border-white/15 transition-colors cursor-pointer disabled:opacity-50"
         >
           <X className="w-4 h-4" />
         </button>
 
         {/* Header Branding */}
         <div className="text-center space-y-2 pt-2">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#130728] border border-[#a855f7]/50 shadow-[0_0_30px_rgba(66,133,244,0.4)] mb-1 relative overflow-hidden group">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-black border border-white/15 mb-1 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-tr from-[#4285F4]/20 via-[#EA4335]/20 to-[#34A853]/20 blur-md opacity-60 group-hover:opacity-100 transition-opacity" />
             <svg className="w-8 h-8 relative z-10 drop-shadow-md" viewBox="0 0 24 24">
               <path
@@ -128,20 +126,20 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
               <span className="animate-letter-bounce text-[#EA4335]" style={{ animationDelay: '0.40s' }}>e</span>
             </span>
           </h3>
-          <p className="text-xs text-[#a393eb]">
-            Authenticate to access <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] via-[#06b6d4] to-[#ec4899] font-bold">Anorix Studio Cockpit</span>
+          <p className="text-xs text-[#A1A1A1]">
+            Authenticate to access <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] via-[#A1A1A1] to-[#A1A1A1] font-bold">Anorix Studio Cockpit</span>
           </p>
         </div>
 
         {/* Auth Steps Feedback */}
         {isAuthenticating ? (
-          <div className="p-6 rounded-2xl bg-[#0a0514] border border-[#a855f7]/40 text-center space-y-4 animate-in fade-in">
+          <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-[#3B82F6]/40 text-center space-y-4 animate-in fade-in">
             <div className="relative w-12 h-12 mx-auto flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full border-2 border-[#a855f7]/20 border-t-[#a855f7] animate-spin" />
+              <div className="absolute inset-0 rounded-full border-2 border-[#3B82F6]/20 border-t-[#3B82F6] animate-spin" />
               {authStep === 'success' ? (
-                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                <CheckCircle2 className="w-6 h-6 text-green-300" />
               ) : (
-                <ShieldCheck className="w-6 h-6 text-[#a855f7]" />
+                <ShieldCheck className="w-6 h-6 text-[#3B82F6]" />
               )}
             </div>
 
@@ -151,7 +149,7 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
                 {authStep === 'verifying' && 'Verifying Security Tokens & Permissions...'}
                 {authStep === 'success' && 'Authentication Successful!'}
               </p>
-              <p className="text-xs text-[#a393eb] mt-1 font-mono">
+              <p className="text-xs text-[#A1A1A1] mt-1 font-mono">
                 Redirecting to Google accounts...
               </p>
             </div>
@@ -192,7 +190,7 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
             {/* Divider */}
             <div className="flex items-center gap-3 py-1">
               <div className="flex-1 h-px bg-white/10" />
-              <span className="text-[10px] font-mono text-[#a393eb]/60 uppercase tracking-widest">or quick demo profile</span>
+              <span className="text-[10px] font-mono text-[#A1A1A1]/60 uppercase tracking-widest">or quick demo profile</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
 
@@ -208,21 +206,21 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
                     onClick={() => setSelectedAccount(accKey)}
                     className={`w-full p-2.5 rounded-2xl border transition-all text-left flex items-center justify-between cursor-pointer ${
                       isSelected
-                        ? 'bg-[#1a0a38] border-[#a855f7] shadow-[0_0_20px_rgba(168,85,247,0.25)]'
-                        : 'bg-[#0a0514] border-white/10 hover:border-white/20 text-[#a393eb]'
+                        ? 'bg-black border-white'
+                        : 'bg-[#0A0A0A] border-white/10 hover:border-white/20 text-[#A1A1A1]'
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <img
                         src={acc.avatar}
                         alt={acc.name}
-                        className="w-8 h-8 rounded-full object-cover border border-[#a855f7]/50"
+                        className="w-8 h-8 rounded-full object-cover border border-[#3B82F6]/50"
                       />
                       <div>
                         <span className="text-xs font-bold text-white block">
                           {acc.name}
                         </span>
-                        <span className="text-[10px] text-[#a393eb] font-mono block">
+                        <span className="text-[10px] text-[#A1A1A1] font-mono block">
                           {acc.email}
                         </span>
                       </div>
@@ -231,11 +229,11 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
                     <div
                       className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${
                         isSelected
-                          ? 'border-[#a855f7] bg-[#a855f7]'
+                          ? 'border-white bg-white'
                           : 'border-white/20 bg-transparent'
                       }`}
                     >
-                      {isSelected && <div className="w-1 h-1 rounded-full bg-white" />}
+                      {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-black" />}
                     </div>
                   </button>
                 );
@@ -243,15 +241,15 @@ export const GoogleSignInModal: React.FC<GoogleSignInModalProps> = ({
 
               <button
                 onClick={handleQuickAccountSignIn}
-                className="w-full py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/40 text-purple-200 border border-purple-500/30 text-xs font-mono font-bold transition-all cursor-pointer"
+                className="w-full py-2.5 rounded-full bg-transparent hover:bg-white hover:text-black text-white border border-white/20 text-xs transition-colors duration-500 cursor-pointer"
               >
                 Sign In Selected Mock Profile
               </button>
             </div>
 
             {/* Persistent Session Note */}
-            <div className="p-3 rounded-xl bg-[#0a0514] border border-white/5 flex items-center gap-2.5 text-[10px] text-[#a393eb]">
-              <Lock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <div className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 flex items-center gap-2.5 text-[10px] text-[#A1A1A1]">
+              <Lock className="w-3.5 h-3.5 text-green-300 shrink-0" />
               <span>
                 Session will remain signed in forever until explicitly signed out in Settings.
               </span>
