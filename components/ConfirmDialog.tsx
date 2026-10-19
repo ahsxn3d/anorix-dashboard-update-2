@@ -17,8 +17,8 @@ export function ConfirmDialog({
       <h2 className="h2">{title}</h2>
       <p>{body}</p>
       <div className="row">
-        <button type="button" className="btn btn-ghost" onClick={onCancel} disabled={busy}>Keep it</button>
-        <button type="button" className="btn btn-danger" onClick={onConfirm} disabled={busy} data-testid="confirm-delete">
+        <button type="button" className="btn btn-ghost" data-magnetic onClick={onCancel} disabled={busy}>Keep it</button>
+        <button type="button" className="btn btn-danger" data-magnetic onClick={onConfirm} disabled={busy} data-testid="confirm-delete">
           {busy ? 'Deleting…' : confirmLabel}
         </button>
       </div>

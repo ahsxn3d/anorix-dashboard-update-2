@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import { Motion } from '@/components/Motion';
 
 const display = Inter_Tight({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--f-display', display: 'swap' });
 const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['italic'], variable: '--f-serif', display: 'swap' });
@@ -21,7 +22,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${serif.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>{children}<Motion /></body>
     </html>
   );
 }

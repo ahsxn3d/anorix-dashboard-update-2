@@ -19,12 +19,12 @@ export default async function StudioLayout({ children }: { children: React.React
           <Link href="/profile" className="me" data-testid="rail-me">
             <Avatar src={s.avatar} name={s.name} />
             <span className="me-txt">
-              <span className="me-name" style={{ display: 'block' }}>{s.name}</span>
-              <span className="me-mail" style={{ display: 'block' }}>{s.email}</span>
+              <span className="me-name">{s.name}</span>
+              <span className="me-mail" title={s.email}>{s.email}</span>
             </span>
           </Link>
           <form action={signOut}>
-            <button className="btn btn-ghost btn-sm" style={{ width: '100%' }} type="submit">
+            <button className="btn btn-ghost btn-sm rail-out" type="submit">
               <IOut size={14} /> Sign out
             </button>
           </form>

@@ -21,7 +21,7 @@ export default async function ProjectsPage() {
             {projects.length} in the catalog, {published} live on the main site. Same order as the site: lowest number first.
           </p>
         </div>
-        <Link href="/projects/new" className="btn rise" style={{ '--i': 4 } as React.CSSProperties} data-testid="new-project">
+        <Link href="/projects/new" className="btn rise" data-magnetic style={{ '--i': 4 } as React.CSSProperties} data-testid="new-project">
           New project <span className="ic"><IPlus size={14} /></span>
         </Link>
       </div>

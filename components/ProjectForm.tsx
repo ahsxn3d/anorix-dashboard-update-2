@@ -98,7 +98,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
 
       <div className="editor">
         <div>
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">01</span><h2 className="h2">Basics</h2></div>
             <div className="fields">
               {F({ k: 'title', label: 'Project name', hint: 'required', full: true, children: (
@@ -139,7 +139,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
             </div>
           </section>
 
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">02</span><h2 className="h2">Story</h2></div>
             <div className="fields">
               {F({ k: 'shortDescription', label: 'Short description', hint: `${v.shortDescription.length}/400`, full: true, children: (
@@ -153,7 +153,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
             </div>
           </section>
 
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">03</span><h2 className="h2">Media</h2></div>
             <div className="fields">
               <div className={`f ${errors.thumbnailUrl ? 'err' : ''}`}>
@@ -170,7 +170,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
             </div>
           </section>
 
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">04</span><h2 className="h2">Links</h2></div>
             <div className="fields">
               {F({ k: 'liveUrl', label: 'Live site', children: (
@@ -188,7 +188,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
             </div>
           </section>
 
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">05</span><h2 className="h2">Details</h2></div>
             <div className="fields">
               <div className="f full"><label htmlFor="f-tech">Tech stack<em>enter or comma</em></label>
@@ -209,7 +209,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
             </div>
           </section>
 
-          <section className="sect">
+          <section className="sect" data-r>
             <div className="sect-head"><span className="mono">06</span><h2 className="h2">Visibility</h2></div>
             <div className="fields">
               <div className="f full">
@@ -238,7 +238,7 @@ export function ProjectForm({ project, initial, categories }: { project?: Projec
               </button>
             ) : null}
             <Link href="/projects" className="btn btn-ghost btn-sm">Cancel</Link>
-            <button type="submit" className="btn" disabled={saving} data-testid="save-project">
+            <button type="submit" className="btn" data-magnetic disabled={saving} data-testid="save-project">
               {saving ? 'Saving…' : project ? 'Save changes' : 'Create project'} <span className="ic"><IArrow size={14} /></span>
             </button>
           </div>

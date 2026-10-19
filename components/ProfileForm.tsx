@@ -27,7 +27,7 @@ export function ProfileForm({ name, image, email }: { name: string; image: strin
         </div>
       </div>
       <div className="full" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <button type="submit" className="btn" disabled={saving || !dirty} data-testid="p-save">
+        <button type="submit" className="btn" data-magnetic disabled={saving || !dirty} data-testid="p-save">
           {saving ? 'Saving…' : 'Save profile'} <span className="ic"><IArrow size={14} /></span>
         </button>
       </div>

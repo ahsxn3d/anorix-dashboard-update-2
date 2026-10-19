@@ -12,7 +12,7 @@ export function DevLoginForm() {
       <div className="devlogin-row">
         <input className="in" name="email" type="email" autoComplete="username" placeholder="Admin email" required aria-label="Admin email" />
         <input className="in" name="password" type="password" autoComplete="current-password" placeholder="ADMIN_DEV_PASSWORD" required aria-label="Password" />
-        <button type="submit" className="btn btn-ghost" disabled={pending}>
+        <button type="submit" className="btn btn-ghost" data-magnetic disabled={pending}>
           {pending ? 'Checking…' : 'Enter'} <IArrow size={14} />
         </button>
       </div>

@@ -26,7 +26,7 @@ export default async function ProfilePage() {
           <BlurTitle text="Your studio profile" serif={['studio']} />
         </div>
         <form action={signOut}>
-          <button type="submit" className="btn btn-ghost rise" style={{ '--i': 3 } as React.CSSProperties}><IOut size={14} /> Sign out</button>
+          <button type="submit" className="btn btn-ghost rise" data-magnetic style={{ '--i': 3 } as React.CSSProperties}><IOut size={14} /> Sign out</button>
         </form>
       </div>
 

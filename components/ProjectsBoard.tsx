@@ -92,17 +92,18 @@ export function ProjectsBoard({ projects }: { projects: ProjectView[] }) {
           <h2 className="h2">{items.length === 0 ? 'No projects yet' : 'Nothing matches'}</h2>
           <p style={{ margin: 0 }}>{items.length === 0 ? 'Add your first case study and it will appear on the main site.' : 'Try another word or clear the filter.'}</p>
           {items.length === 0 ? (
-            <Link href="/projects/new" className="btn">New project <span className="ic"><IPlus size={14} /></span></Link>
+            <Link href="/projects/new" className="btn" data-magnetic>New project <span className="ic"><IPlus size={14} /></span></Link>
           ) : (
-            <button type="button" className="btn btn-ghost" onClick={() => { setQ(''); setFilter('all'); }}>Clear</button>
+            <button type="button" className="btn btn-ghost" data-magnetic onClick={() => { setQ(''); setFilter('all'); }}>Clear</button>
           )}
         </div>
       ) : (
         <div className="grid" aria-busy={pending}>
           {shown.map((p, i) => (
-            <article key={p.id} className="card rise" style={{ '--i': Math.min(i, 8) + 6 } as React.CSSProperties} data-testid="project-card" data-slug={p.slug}>
+            <article key={p.id} className="card" data-r style={{ '--d': `${Math.min(i % 3, 2) * 90}ms` } as React.CSSProperties} data-testid="project-card" data-slug={p.slug}>
               <Link href={`/projects/${p.id}`} className="card-link" aria-label={`Edit ${p.title}`} />
               <div className="card-media">
+                <span className="card-chip" aria-hidden="true">Edit</span>
                 {p.thumbnailUrl ? <img src={p.thumbnailUrl} alt="" loading={i < 6 ? 'eager' : 'lazy'} decoding="async" /> : <span className="ph"><IGrid /></span>}
                 <div className="card-flags">
                   <span className="chip"><span className={`dot ${p.status === 'PRODUCTION' ? '' : p.status === 'ARCHIVED' ? 'off' : 'warn'}`} />{STATUS_LABEL[p.status]}</span>
